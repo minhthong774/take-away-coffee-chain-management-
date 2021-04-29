@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18D56775-D179-4D27-872B-AE9A6AA466DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLiChuoiCF</RootNamespace>
+    <AssemblyName>QuanLiChuoiCF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillExportDAO.cs" />
+    <Compile Include="DAO\BranchDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DetailOfBillDAO.cs" />
+    <Compile Include="DAO\DetailOfBillExportDAO.cs" />
+    <Compile Include="DAO\DrinkDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\FullTimeEmployeeManagementDAO.cs" />
+    <Compile Include="DAO\InforOfMaterialDAO.cs" />
+    <Compile Include="DAO\PartTimeEmployeeManagementDAO.cs" />
+    <Compile Include="DAO\SupplierDAO.cs" />
+    <Compile Include="DAO\MaterialDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillExport.cs" />
+    <Compile Include="DTO\Branch.cs" />
+    <Compile Include="DTO\DateOff.cs" />
+    <Compile Include="DTO\DateWork.cs" />
+    <Compile Include="DTO\DetailOfBill.cs" />
+    <Compile Include="DTO\DetailOfBillExport.cs" />
+    <Compile Include="DTO\Drink.cs" />
+    <Compile Include="DTO\Employee.cs" />
+    <Compile Include="DTO\FullTimeEmployeeManagement.cs" />
+    <Compile Include="DTO\Material.cs" />
+    <Compile Include="DTO\InforOfMaterial.cs" />
+    <Compile Include="DTO\PartTimeEmployeeManagement.cs" />
+    <Compile Include="DTO\Supplier.cs" />
+    <Compile Include="fAccountProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountProfile.Designer.cs">
+      <DependentUpon>fAccountProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAddSubEmployeeInWorkDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddSubEmployeeInWorkDay.Designer.cs">
+      <DependentUpon>fAddSubEmployeeInWorkDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAdmin.Designer.cs">
+      <DependentUpon>fAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChangeNumberOfMaterialExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChangeNumberOfMaterialExport.Designer.cs">
+      <DependentUpon>fChangeNumberOfMaterialExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChangeNumberOfMaterialImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChangeNumberOfMaterialImport.Designer.cs">
+      <DependentUpon>fChangeNumberOfMaterialImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fDetailOfBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDetailOfBill.Designer.cs">
+      <DependentUpon>fDetailOfBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEnterNumberOfMaterialExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEnterNumberOfMaterialExport.Designer.cs">
+      <DependentUpon>fEnterNumberOfMaterialExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEnterNumberOfMaterialImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEnterNumberOfMaterialImport.Designer.cs">
+      <DependentUpon>fEnterNumberOfMaterialImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fExportMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fExportMaterial.Designer.cs">
+      <DependentUpon>fExportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fImportMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fImportMaterial.Designer.cs">
+      <DependentUpon>fImportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNewAccount.Designer.cs">
+      <DependentUpon>fNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPayment.Designer.cs">
+      <DependentUpon>fPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSelectModeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSelectModeAdmin.Designer.cs">
+      <DependentUpon>fSelectModeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fWorkManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWorkManagement.Designer.cs">
+      <DependentUpon>fWorkManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GenerationaManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerationaManager.Designer.cs">
+      <DependentUpon>GenerationaManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiChuoiCFDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAccountProfile.resx">
+      <DependentUpon>fAccountProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddSubEmployeeInWorkDay.resx">
+      <DependentUpon>fAddSubEmployeeInWorkDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAdmin.resx">
+      <DependentUpon>fAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChangeNumberOfMaterialExport.resx">
+      <DependentUpon>fChangeNumberOfMaterialExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChangeNumberOfMaterialImport.resx">
+      <DependentUpon>fChangeNumberOfMaterialImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDetailOfBill.resx">
+      <DependentUpon>fDetailOfBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEnterNumberOfMaterialExport.resx">
+      <DependentUpon>fEnterNumberOfMaterialExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEnterNumberOfMaterialImport.resx">
+      <DependentUpon>fEnterNumberOfMaterialImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fExportMaterial.resx">
+      <DependentUpon>fExportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fImportMaterial.resx">
+      <DependentUpon>fImportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNewAccount.resx">
+      <DependentUpon>fNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPayment.resx">
+      <DependentUpon>fPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSelectModeAdmin.resx">
+      <DependentUpon>fSelectModeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWorkManagement.resx">
+      <DependentUpon>fWorkManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="GenerationaManager.resx">
+      <DependentUpon>GenerationaManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QuanLiChuoiCFDataSet.xsc">
+      <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLiChuoiCFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLiChuoiCFDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLiChuoiCFDataSet.xss">
+      <DependentUpon>QuanLiChuoiCFDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_synchronize_64px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unavailable_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_up_down_arrow_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_upload_link_document_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_50px_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_locked_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_verified_account_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\46849021474_73859753b5_h.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bribery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bribery_10px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bribery_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bribery_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_coffee_to_go.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_coffee_to_go_26px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ice_cream_in_waffle_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_java_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_login_64px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_microsoft_admin_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minus_64px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_name_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_orange_soda_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_padlock_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_30px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_payment_history.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_payment_history_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_person_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pos_terminal_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pupil_female_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_receive_cash_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_school_director_64px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
