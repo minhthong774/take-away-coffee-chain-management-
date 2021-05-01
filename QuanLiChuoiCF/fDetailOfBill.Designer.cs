@@ -30,12 +30,17 @@ namespace QuanLiChuoiCF
         private void InitializeComponent()
         {
             System.Windows.Forms.ColumnHeader clHDrinkName;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDetailOfBill));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lsvDetailOfBill = new System.Windows.Forms.ListView();
             this.clHAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clHPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clHTotalAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txbTotalAmount = new System.Windows.Forms.TextBox();
+            this.txbPrice = new System.Windows.Forms.TextBox();
+            this.lbTotalAmount = new System.Windows.Forms.Label();
+            this.lbPrice = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,10 +49,6 @@ namespace QuanLiChuoiCF
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lbPrice = new System.Windows.Forms.Label();
-            this.lbTotalAmount = new System.Windows.Forms.Label();
-            this.txbPrice = new System.Windows.Forms.TextBox();
-            this.txbTotalAmount = new System.Windows.Forms.TextBox();
             clHDrinkName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -114,8 +115,48 @@ namespace QuanLiChuoiCF
             this.panel2.Size = new System.Drawing.Size(397, 155);
             this.panel2.TabIndex = 1;
             // 
+            // txbTotalAmount
+            // 
+            this.txbTotalAmount.BackColor = System.Drawing.SystemColors.Window;
+            this.txbTotalAmount.ForeColor = System.Drawing.Color.Teal;
+            this.txbTotalAmount.Location = new System.Drawing.Point(98, 118);
+            this.txbTotalAmount.Name = "txbTotalAmount";
+            this.txbTotalAmount.Size = new System.Drawing.Size(274, 20);
+            this.txbTotalAmount.TabIndex = 10;
+            // 
+            // txbPrice
+            // 
+            this.txbPrice.BackColor = System.Drawing.SystemColors.Window;
+            this.txbPrice.ForeColor = System.Drawing.Color.Teal;
+            this.txbPrice.Location = new System.Drawing.Point(98, 85);
+            this.txbPrice.Name = "txbPrice";
+            this.txbPrice.Size = new System.Drawing.Size(274, 20);
+            this.txbPrice.TabIndex = 9;
+            // 
+            // lbTotalAmount
+            // 
+            this.lbTotalAmount.AutoSize = true;
+            this.lbTotalAmount.ForeColor = System.Drawing.Color.Wheat;
+            this.lbTotalAmount.Location = new System.Drawing.Point(26, 125);
+            this.lbTotalAmount.Name = "lbTotalAmount";
+            this.lbTotalAmount.Size = new System.Drawing.Size(73, 13);
+            this.lbTotalAmount.TabIndex = 8;
+            this.lbTotalAmount.Text = "Total Amount:";
+            // 
+            // lbPrice
+            // 
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.ForeColor = System.Drawing.Color.Wheat;
+            this.lbPrice.Location = new System.Drawing.Point(26, 92);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(31, 13);
+            this.lbPrice.TabIndex = 7;
+            this.lbPrice.Text = "Price";
+            // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.ForeColor = System.Drawing.Color.Teal;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(98, 11);
             this.comboBox1.Name = "comboBox1";
@@ -124,6 +165,8 @@ namespace QuanLiChuoiCF
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.BackColor = System.Drawing.SystemColors.Window;
+            this.numericUpDown1.ForeColor = System.Drawing.Color.Teal;
             this.numericUpDown1.Location = new System.Drawing.Point(98, 51);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
@@ -132,6 +175,7 @@ namespace QuanLiChuoiCF
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Wheat;
             this.label2.Location = new System.Drawing.Point(26, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -141,6 +185,7 @@ namespace QuanLiChuoiCF
             // lbDrinkName
             // 
             this.lbDrinkName.AutoSize = true;
+            this.lbDrinkName.ForeColor = System.Drawing.Color.Wheat;
             this.lbDrinkName.Location = new System.Drawing.Point(26, 19);
             this.lbDrinkName.Name = "lbDrinkName";
             this.lbDrinkName.Size = new System.Drawing.Size(66, 13);
@@ -159,73 +204,49 @@ namespace QuanLiChuoiCF
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.Wheat;
+            this.btnDelete.ForeColor = System.Drawing.Color.Teal;
             this.btnDelete.Location = new System.Drawing.Point(179, 8);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Wheat;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Teal;
             this.btnUpdate.Location = new System.Drawing.Point(98, 8);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.Wheat;
+            this.btnAdd.ForeColor = System.Drawing.Color.Teal;
             this.btnAdd.Location = new System.Drawing.Point(17, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // lbPrice
-            // 
-            this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(26, 92);
-            this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(31, 13);
-            this.lbPrice.TabIndex = 7;
-            this.lbPrice.Text = "Price";
-            // 
-            // lbTotalAmount
-            // 
-            this.lbTotalAmount.AutoSize = true;
-            this.lbTotalAmount.Location = new System.Drawing.Point(26, 125);
-            this.lbTotalAmount.Name = "lbTotalAmount";
-            this.lbTotalAmount.Size = new System.Drawing.Size(73, 13);
-            this.lbTotalAmount.TabIndex = 8;
-            this.lbTotalAmount.Text = "Total Amount:";
-            // 
-            // txbPrice
-            // 
-            this.txbPrice.Location = new System.Drawing.Point(98, 85);
-            this.txbPrice.Name = "txbPrice";
-            this.txbPrice.Size = new System.Drawing.Size(274, 20);
-            this.txbPrice.TabIndex = 9;
-            // 
-            // txbTotalAmount
-            // 
-            this.txbTotalAmount.Location = new System.Drawing.Point(98, 118);
-            this.txbTotalAmount.Name = "txbTotalAmount";
-            this.txbTotalAmount.Size = new System.Drawing.Size(274, 20);
-            this.txbTotalAmount.TabIndex = 10;
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // fDetailOfBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(978, 518);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fDetailOfBill";
-            this.Text = "fDetailOfBill";
+            this.Text = "Detail Of Bill";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

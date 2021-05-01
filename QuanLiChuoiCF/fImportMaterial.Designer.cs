@@ -29,6 +29,7 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fImportMaterial));
             this.lsvInfoOfMaterial = new System.Windows.Forms.ListView();
             this.clName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,6 +65,7 @@ namespace QuanLiChuoiCF
             this.columnHeader2,
             this.columnHeader6,
             this.columnHeader7});
+            this.lsvInfoOfMaterial.ForeColor = System.Drawing.Color.Teal;
             this.lsvInfoOfMaterial.FullRowSelect = true;
             this.lsvInfoOfMaterial.HideSelection = false;
             this.lsvInfoOfMaterial.Location = new System.Drawing.Point(12, 60);
@@ -109,6 +111,7 @@ namespace QuanLiChuoiCF
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Wheat;
             this.label3.Location = new System.Drawing.Point(49, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
@@ -117,6 +120,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbSortBy
             // 
+            this.cbbSortBy.ForeColor = System.Drawing.Color.Teal;
             this.cbbSortBy.FormattingEnabled = true;
             this.cbbSortBy.Location = new System.Drawing.Point(111, 13);
             this.cbbSortBy.Name = "cbbSortBy";
@@ -137,6 +141,7 @@ namespace QuanLiChuoiCF
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Wheat;
             this.label17.Location = new System.Drawing.Point(3, 36);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 13);
@@ -145,6 +150,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbSearchBy
             // 
+            this.cbbSearchBy.ForeColor = System.Drawing.Color.Teal;
             this.cbbSearchBy.FormattingEnabled = true;
             this.cbbSearchBy.Location = new System.Drawing.Point(71, 2);
             this.cbbSearchBy.Name = "cbbSearchBy";
@@ -154,6 +160,7 @@ namespace QuanLiChuoiCF
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Wheat;
             this.label13.Location = new System.Drawing.Point(3, 5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
@@ -162,6 +169,7 @@ namespace QuanLiChuoiCF
             // 
             // txbSearch
             // 
+            this.txbSearch.ForeColor = System.Drawing.Color.Teal;
             this.txbSearch.Location = new System.Drawing.Point(71, 29);
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(281, 20);
@@ -177,6 +185,7 @@ namespace QuanLiChuoiCF
             this.columnHeader8,
             this.columnHeader5,
             this.columnHeader9});
+            this.lsvBillImport.ForeColor = System.Drawing.Color.Teal;
             this.lsvBillImport.FullRowSelect = true;
             this.lsvBillImport.HideSelection = false;
             this.lsvBillImport.Location = new System.Drawing.Point(738, 60);
@@ -223,16 +232,19 @@ namespace QuanLiChuoiCF
             // 
             // btnImport
             // 
+            this.btnImport.BackColor = System.Drawing.Color.Wheat;
+            this.btnImport.ForeColor = System.Drawing.Color.Teal;
             this.btnImport.Location = new System.Drawing.Point(1203, 692);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(137, 49);
             this.btnImport.TabIndex = 19;
             this.btnImport.Text = "IMPORT";
-            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.UseVisualStyleBackColor = false;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // txbTotalAmount
             // 
+            this.txbTotalAmount.ForeColor = System.Drawing.Color.Teal;
             this.txbTotalAmount.Location = new System.Drawing.Point(1162, 666);
             this.txbTotalAmount.Name = "txbTotalAmount";
             this.txbTotalAmount.Size = new System.Drawing.Size(178, 20);
@@ -242,6 +254,7 @@ namespace QuanLiChuoiCF
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.Wheat;
             this.label1.Location = new System.Drawing.Point(1035, 666);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 20);
@@ -252,6 +265,7 @@ namespace QuanLiChuoiCF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1352, 753);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbTotalAmount);
@@ -260,8 +274,10 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.lsvInfoOfMaterial);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fImportMaterial";
-            this.Text = "fImportMaterial";
+            this.Text = "Import Material";
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);

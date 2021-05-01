@@ -29,6 +29,7 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEnterNumberOfMaterialImport));
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.nudNumberOfMaterial = new System.Windows.Forms.NumericUpDown();
@@ -40,17 +41,20 @@ namespace QuanLiChuoiCF
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.Wheat;
+            this.btnOK.ForeColor = System.Drawing.Color.Teal;
             this.btnOK.Location = new System.Drawing.Point(142, 101);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(103, 45);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Wheat;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 13);
@@ -59,6 +63,7 @@ namespace QuanLiChuoiCF
             // 
             // nudNumberOfMaterial
             // 
+            this.nudNumberOfMaterial.ForeColor = System.Drawing.Color.Teal;
             this.nudNumberOfMaterial.Location = new System.Drawing.Point(12, 25);
             this.nudNumberOfMaterial.Maximum = new decimal(new int[] {
             99999,
@@ -89,6 +94,7 @@ namespace QuanLiChuoiCF
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Wheat;
             this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
@@ -99,6 +105,7 @@ namespace QuanLiChuoiCF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(376, 188);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpExpiryDate);
@@ -106,9 +113,10 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nudNumberOfMaterial);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fEnterNumberOfMaterialImport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fEnterNumberOfMaterialImport";
+            this.Text = "Enter Number Of Material Import";
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberOfMaterial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

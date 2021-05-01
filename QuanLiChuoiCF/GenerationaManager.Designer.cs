@@ -65,6 +65,7 @@
             this.panel43 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.cbb_Bill_SortBy = new System.Windows.Forms.ComboBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,7 +87,7 @@
             this.thôngTinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1296, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -360,7 +361,7 @@
             this.panel1.BackColor = System.Drawing.Color.Wheat;
             this.panel1.Location = new System.Drawing.Point(3, 653);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 25);
+            this.panel1.Size = new System.Drawing.Size(1266, 25);
             this.panel1.TabIndex = 7;
             // 
             // panel5
@@ -378,12 +379,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(31, 617);
             this.panel6.TabIndex = 9;
-            // 
-            // ribbonTab7
-            // 
-            // 
-            // ribbonPanel3
-            // 
             // 
             // panel7
             // 
@@ -479,15 +474,24 @@
             this.cbb_Bill_SortBy.Size = new System.Drawing.Size(209, 24);
             this.cbb_Bill_SortBy.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Wheat;
+            this.panel8.Location = new System.Drawing.Point(1264, 30);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(26, 648);
+            this.panel8.TabIndex = 8;
+            // 
             // fTableManager
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1296, 681);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -559,5 +563,6 @@
         private System.Windows.Forms.Panel panel43;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbb_Bill_SortBy;
+        private System.Windows.Forms.Panel panel8;
     }
 }

@@ -29,11 +29,14 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fExportMaterial));
             this.lsvBillExport = new System.Windows.Forms.ListView();
             this.clMaterial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clUnit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.txbTotalAmount = new System.Windows.Forms.TextBox();
@@ -55,14 +58,13 @@ namespace QuanLiChuoiCF
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvBillExport
             // 
+            this.lsvBillExport.BackColor = System.Drawing.SystemColors.Window;
             this.lsvBillExport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clMaterial,
             this.clNumber,
@@ -71,6 +73,7 @@ namespace QuanLiChuoiCF
             this.columnHeader2,
             this.columnHeader6,
             this.clAmount});
+            this.lsvBillExport.ForeColor = System.Drawing.Color.Teal;
             this.lsvBillExport.FullRowSelect = true;
             this.lsvBillExport.HideSelection = false;
             this.lsvBillExport.Location = new System.Drawing.Point(744, 67);
@@ -102,6 +105,16 @@ namespace QuanLiChuoiCF
             this.clPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.clPrice.Width = 80;
             // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Supplier";
+            this.columnHeader2.Width = 80;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Expiry Day";
+            this.columnHeader6.Width = 80;
+            // 
             // clAmount
             // 
             this.clAmount.Text = "Amount";
@@ -128,6 +141,7 @@ namespace QuanLiChuoiCF
             // 
             this.lbBranch.AutoSize = true;
             this.lbBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbBranch.ForeColor = System.Drawing.Color.Wheat;
             this.lbBranch.Location = new System.Drawing.Point(990, 13);
             this.lbBranch.Name = "lbBranch";
             this.lbBranch.Size = new System.Drawing.Size(71, 20);
@@ -136,6 +150,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbBranch
             // 
+            this.cbbBranch.ForeColor = System.Drawing.Color.Teal;
             this.cbbBranch.FormattingEnabled = true;
             this.cbbBranch.Location = new System.Drawing.Point(1082, 12);
             this.cbbBranch.Name = "cbbBranch";
@@ -154,6 +169,7 @@ namespace QuanLiChuoiCF
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Wheat;
             this.label3.Location = new System.Drawing.Point(49, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
@@ -162,6 +178,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbSortBy
             // 
+            this.cbbSortBy.ForeColor = System.Drawing.Color.Teal;
             this.cbbSortBy.FormattingEnabled = true;
             this.cbbSortBy.Location = new System.Drawing.Point(111, 13);
             this.cbbSortBy.Name = "cbbSortBy";
@@ -183,6 +200,7 @@ namespace QuanLiChuoiCF
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Wheat;
             this.label17.Location = new System.Drawing.Point(3, 36);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 13);
@@ -191,6 +209,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbSearchBy
             // 
+            this.cbbSearchBy.ForeColor = System.Drawing.Color.Teal;
             this.cbbSearchBy.FormattingEnabled = true;
             this.cbbSearchBy.Location = new System.Drawing.Point(71, 2);
             this.cbbSearchBy.Name = "cbbSearchBy";
@@ -200,6 +219,7 @@ namespace QuanLiChuoiCF
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Wheat;
             this.label13.Location = new System.Drawing.Point(3, 5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
@@ -208,6 +228,7 @@ namespace QuanLiChuoiCF
             // 
             // txbSearch
             // 
+            this.txbSearch.ForeColor = System.Drawing.Color.Teal;
             this.txbSearch.Location = new System.Drawing.Point(71, 29);
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(281, 20);
@@ -216,6 +237,7 @@ namespace QuanLiChuoiCF
             // 
             // lsvMaterialInWarehouse
             // 
+            this.lsvMaterialInWarehouse.BackColor = System.Drawing.SystemColors.Window;
             this.lsvMaterialInWarehouse.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clName,
             this.clAmountLeft,
@@ -223,6 +245,7 @@ namespace QuanLiChuoiCF
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.lsvMaterialInWarehouse.ForeColor = System.Drawing.Color.Teal;
             this.lsvMaterialInWarehouse.FullRowSelect = true;
             this.lsvMaterialInWarehouse.HideSelection = false;
             this.lsvMaterialInWarehouse.Location = new System.Drawing.Point(9, 67);
@@ -273,20 +296,11 @@ namespace QuanLiChuoiCF
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Supplier";
-            this.columnHeader2.Width = 80;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Expiry Day";
-            this.columnHeader6.Width = 80;
-            // 
             // fExportMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1356, 769);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lsvMaterialInWarehouse);
@@ -297,9 +311,10 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.txbTotalAmount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lsvBillExport);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fExportMaterial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fExportMaterial";
+            this.Text = "Export Material";
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);

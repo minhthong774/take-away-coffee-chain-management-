@@ -39,6 +39,8 @@ namespace QuanLiChuoiCF
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lb_Payment_Totalprice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@ namespace QuanLiChuoiCF
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Payment_Prirnt = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lb_Payment_Totalprice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
@@ -120,6 +120,24 @@ namespace QuanLiChuoiCF
             this.panel2.Size = new System.Drawing.Size(394, 390);
             this.panel2.TabIndex = 0;
             // 
+            // lb_Payment_Totalprice
+            // 
+            this.lb_Payment_Totalprice.AutoSize = true;
+            this.lb_Payment_Totalprice.Location = new System.Drawing.Point(255, 323);
+            this.lb_Payment_Totalprice.Name = "lb_Payment_Totalprice";
+            this.lb_Payment_Totalprice.Size = new System.Drawing.Size(46, 13);
+            this.lb_Payment_Totalprice.TabIndex = 4;
+            this.lb_Payment_Totalprice.Text = "000.000";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(193, 323);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Total price:\r\n";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -176,7 +194,7 @@ namespace QuanLiChuoiCF
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Teal;
+            this.panel3.BackColor = System.Drawing.Color.Wheat;
             this.panel3.Controls.Add(this.btn_Payment_Prirnt);
             this.panel3.Location = new System.Drawing.Point(9, 527);
             this.panel3.Name = "panel3";
@@ -195,7 +213,7 @@ namespace QuanLiChuoiCF
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Wheat;
+            this.panel4.BackColor = System.Drawing.Color.Teal;
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -203,29 +221,11 @@ namespace QuanLiChuoiCF
             this.panel4.Size = new System.Drawing.Size(419, 508);
             this.panel4.TabIndex = 1;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(193, 323);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Total price:\r\n";
-            // 
-            // lb_Payment_Totalprice
-            // 
-            this.lb_Payment_Totalprice.AutoSize = true;
-            this.lb_Payment_Totalprice.Location = new System.Drawing.Point(255, 323);
-            this.lb_Payment_Totalprice.Name = "lb_Payment_Totalprice";
-            this.lb_Payment_Totalprice.Size = new System.Drawing.Size(46, 13);
-            this.lb_Payment_Totalprice.TabIndex = 4;
-            this.lb_Payment_Totalprice.Text = "000.000";
-            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Wheat;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(420, 597);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

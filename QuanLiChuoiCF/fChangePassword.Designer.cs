@@ -29,6 +29,7 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fChangePassword));
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbNewPassword = new System.Windows.Forms.Label();
             this.lbConfirmNewPassword = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace QuanLiChuoiCF
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
+            this.lbPassword.ForeColor = System.Drawing.Color.Wheat;
             this.lbPassword.Location = new System.Drawing.Point(12, 33);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(56, 13);
@@ -52,6 +54,7 @@ namespace QuanLiChuoiCF
             // lbNewPassword
             // 
             this.lbNewPassword.AutoSize = true;
+            this.lbNewPassword.ForeColor = System.Drawing.Color.Wheat;
             this.lbNewPassword.Location = new System.Drawing.Point(12, 72);
             this.lbNewPassword.Name = "lbNewPassword";
             this.lbNewPassword.Size = new System.Drawing.Size(81, 13);
@@ -61,6 +64,7 @@ namespace QuanLiChuoiCF
             // lbConfirmNewPassword
             // 
             this.lbConfirmNewPassword.AutoSize = true;
+            this.lbConfirmNewPassword.ForeColor = System.Drawing.Color.Wheat;
             this.lbConfirmNewPassword.Location = new System.Drawing.Point(12, 114);
             this.lbConfirmNewPassword.Name = "lbConfirmNewPassword";
             this.lbConfirmNewPassword.Size = new System.Drawing.Size(119, 13);
@@ -69,6 +73,7 @@ namespace QuanLiChuoiCF
             // 
             // txbPassword
             // 
+            this.txbPassword.ForeColor = System.Drawing.Color.Teal;
             this.txbPassword.Location = new System.Drawing.Point(139, 30);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(211, 20);
@@ -77,6 +82,7 @@ namespace QuanLiChuoiCF
             // 
             // txbNewPassword
             // 
+            this.txbNewPassword.ForeColor = System.Drawing.Color.Teal;
             this.txbNewPassword.Location = new System.Drawing.Point(139, 70);
             this.txbNewPassword.Name = "txbNewPassword";
             this.txbNewPassword.Size = new System.Drawing.Size(211, 20);
@@ -85,6 +91,7 @@ namespace QuanLiChuoiCF
             // 
             // txbConfirmNewPassword
             // 
+            this.txbConfirmNewPassword.ForeColor = System.Drawing.Color.Teal;
             this.txbConfirmNewPassword.Location = new System.Drawing.Point(139, 110);
             this.txbConfirmNewPassword.Name = "txbConfirmNewPassword";
             this.txbConfirmNewPassword.Size = new System.Drawing.Size(211, 20);
@@ -93,17 +100,20 @@ namespace QuanLiChuoiCF
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.Wheat;
+            this.btnOK.ForeColor = System.Drawing.Color.Teal;
             this.btnOK.Location = new System.Drawing.Point(139, 169);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // lbNotify
             // 
             this.lbNotify.AutoSize = true;
+            this.lbNotify.ForeColor = System.Drawing.Color.Wheat;
             this.lbNotify.Location = new System.Drawing.Point(12, 148);
             this.lbNotify.Name = "lbNotify";
             this.lbNotify.Size = new System.Drawing.Size(46, 13);
@@ -114,6 +124,7 @@ namespace QuanLiChuoiCF
             // 
             this.label1.AllowDrop = true;
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Wheat;
             this.label1.Location = new System.Drawing.Point(12, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 52);
@@ -125,6 +136,7 @@ namespace QuanLiChuoiCF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(365, 279);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbNotify);
@@ -135,9 +147,10 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.lbConfirmNewPassword);
             this.Controls.Add(this.lbNewPassword);
             this.Controls.Add(this.lbPassword);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fChangePassword";
+            this.Text = "Change Password";
             this.ResumeLayout(false);
             this.PerformLayout();
 
