@@ -14,7 +14,8 @@ namespace QuanLiChuoiCF
     {
         private static List<Drink> drinks;
         private static int totalPrice;
-
+        public static List<Drink> searchedDrinks = new List<Drink>();
+        List<Drink> drinksTemp = new List<Drink>();
         public static List<Drink> Drinks { get => drinks; set => drinks = value; }
         public static int TotalPrice { get => totalPrice; set => totalPrice = value; }
 
@@ -22,6 +23,17 @@ namespace QuanLiChuoiCF
         {
             InitializeComponent();
             LoadDrink();
+            searchedDrinks = Drinks;
+            cbb_Drink_SearchBy.Items.Add("ID");
+            cbb_Drink_SearchBy.Items.Add("Drink Name");
+            cbb_Drink_SearchBy.Items.Add("Price");
+            cbb_Drink_SearchBy.SelectedItem = cbb_Drink_SearchBy.Items[0];
+
+            cbb_Drink_SortBy.Items.Add("ID");
+            cbb_Drink_SortBy.Items.Add("Drink Name");
+            cbb_Drink_SortBy.Items.Add("Price");
+            cbb_Drink_SortBy.SelectedItem = cbb_Drink_SearchBy.Items[0];
+            
         }
         #region Method
         public string getIDIncrea(string ID)
@@ -63,7 +75,6 @@ namespace QuanLiChuoiCF
                 flpDrink.FlowDirection = FlowDirection.LeftToRight;
                 cbb_addDrink.Items.Add(item.ID + "-" +item.Name);
             }
-
         }
 
         #endregion
@@ -138,34 +149,7 @@ namespace QuanLiChuoiCF
 
         }
 
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fAdmin f = new fAdmin();
-            f.InsertDrink += f_InsertDrink;
-            f.DeleteDrink += f_DeleteDrink;
-            f.UpdateDrink += f_UpdateDrink;
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
-        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fAccountProfile f = new fAccountProfile();
-            f.ShowDialog();
-
-        }
-        
-        private void flpBranch_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         void f_UpdateDrink(object sender, EventArgs e)
         {
@@ -181,19 +165,9 @@ namespace QuanLiChuoiCF
         {
             LoadDrink();
         }
-
         #endregion
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbb_addDrink_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void btnDeleteOrderClick(object sender, EventArgs e)
         {
             if(lsvBill.SelectedItems.Count > 0)
@@ -202,10 +176,6 @@ namespace QuanLiChuoiCF
             }
         }
 
-        private void labelCount_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lsvSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -225,20 +195,6 @@ namespace QuanLiChuoiCF
                 item.SubItems[1].Text = numericUpDown1.Value.ToString();
             }
         }
-
-  
-
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void userInformationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fAccountProfile f = new fAccountProfile();
-            f.ShowDialog();
-        }
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             string lastIDBill="";
@@ -271,8 +227,8 @@ namespace QuanLiChuoiCF
                 p.Close();
             }
             //Reset list view bill
-            lsvBill.Clear();
-          
+            lsvBill.Items.Clear();   
+           
         }
         public Branch getBrandOfAccount()
         {
@@ -285,5 +241,77 @@ namespace QuanLiChuoiCF
             return null;
         }
 
+
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+       
+        private void cbb_Drink_SortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbb_Drink_SortBy.Text)
+            {
+                case "":
+                    LoadDrink();
+                    break;
+                case "ID":
+                    searchedDrinks = searchedDrinks.OrderBy(o => o.ID).ToList();
+                    LoadChangeSortAndSearchData();
+                    break;
+                case "Drink Name":
+                    searchedDrinks = searchedDrinks.OrderBy(o => o.Name).ToList();
+                    LoadChangeSortAndSearchData();
+                    break;
+                case "Price":
+                    searchedDrinks = searchedDrinks.OrderBy(o => o.Price).ToList();
+                    LoadChangeSortAndSearchData();
+                    break;
+            }
+            
+        }
+     
+
+        private void txb_Drink_Search_TextChanged(object sender, EventArgs e)
+        {
+            string searchingText = txb_Drink_Search.Text;
+            switch (cbb_Drink_SearchBy.Text)
+            {
+                case "":
+                    LoadDrink();
+                    break;
+                case "ID":
+                    searchedDrinks = Drinks.FindAll(item => item.ID.Contains(searchingText));
+                    LoadChangeSortAndSearchData();
+                    break;
+                case "Drink Name":
+                    searchedDrinks = Drinks.FindAll(item => item.Name.Contains(searchingText));
+                    LoadChangeSortAndSearchData();
+                    break;
+                case "Price":
+                    searchedDrinks = Drinks.FindAll(item => item.Price.ToString().Contains(searchingText));
+                    LoadChangeSortAndSearchData();
+                    break;
+            } 
+        }
+        void LoadChangeSortAndSearchData()
+        {
+            flpDrink.Controls.Clear();
+            cbb_addDrink.Items.Clear();
+            foreach (Drink item in searchedDrinks)
+            {
+                Button btn = new Button()
+                {
+                    Width = DrinkDAO.TableWidth,
+                    Height = DrinkDAO.TableHeight
+                };
+                btn.Text = item.Name + Environment.NewLine + item.Price;
+                btn.Click += btn_Click;
+                btn.Tag = item;
+                flpDrink.Controls.Add(btn);
+                flpDrink.FlowDirection = FlowDirection.LeftToRight;
+                cbb_addDrink.Items.Add(item.ID + "-" + item.Name);
+            }
+        }
     }
 }

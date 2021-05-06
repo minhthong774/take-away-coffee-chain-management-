@@ -317,6 +317,14 @@ namespace QuanLiChuoiCF
             this.lb_Warehouse_IDMaterial = new System.Windows.Forms.Label();
             this.lb_Warehouse_Amount = new System.Windows.Forms.Label();
             this.tpBillExport = new System.Windows.Forms.TabPage();
+            this.lsv_BillExport_DetailOfBillExport = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel48 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
             this.cbb_BillExport_SearchBy = new System.Windows.Forms.ComboBox();
@@ -339,22 +347,14 @@ namespace QuanLiChuoiCF
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.btn_BillExport_Delete = new System.Windows.Forms.Button();
             this.lb_BillExport_Notify = new System.Windows.Forms.Label();
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLiChuoiCFDataSet = new QuanLiChuoiCF.QuanLiChuoiCFDataSet();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
             this.supplierTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter();
-            this.lsv_BillExport_DetailOfBillExport = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_BillExport_Delete = new System.Windows.Forms.Button();
-            this.panel51 = new System.Windows.Forms.Panel();
             clHDrinkName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -428,10 +428,10 @@ namespace QuanLiChuoiCF
             this.panel49.SuspendLayout();
             this.panel50.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nm_BillExport_TotalPrice)).BeginInit();
+            this.panel51.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            this.panel51.SuspendLayout();
             this.SuspendLayout();
             // 
             // clHDrinkName
@@ -2225,6 +2225,7 @@ namespace QuanLiChuoiCF
             this.cbb_Bill_SearchBy.Name = "cbb_Bill_SearchBy";
             this.cbb_Bill_SearchBy.Size = new System.Drawing.Size(285, 21);
             this.cbb_Bill_SearchBy.TabIndex = 2;
+            this.cbb_Bill_SearchBy.SelectedIndexChanged += new System.EventHandler(this.cbb_Bill_SearchBy_SelectedIndexChanged);
             // 
             // label27
             // 
@@ -3099,6 +3100,55 @@ namespace QuanLiChuoiCF
             this.tpBillExport.Text = "Bill Export";
             this.tpBillExport.UseVisualStyleBackColor = true;
             // 
+            // lsv_BillExport_DetailOfBillExport
+            // 
+            this.lsv_BillExport_DetailOfBillExport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lsv_BillExport_DetailOfBillExport.FullRowSelect = true;
+            this.lsv_BillExport_DetailOfBillExport.HideSelection = false;
+            this.lsv_BillExport_DetailOfBillExport.Location = new System.Drawing.Point(727, 276);
+            this.lsv_BillExport_DetailOfBillExport.Name = "lsv_BillExport_DetailOfBillExport";
+            this.lsv_BillExport_DetailOfBillExport.Size = new System.Drawing.Size(509, 345);
+            this.lsv_BillExport_DetailOfBillExport.TabIndex = 38;
+            this.lsv_BillExport_DetailOfBillExport.UseCompatibleStateImageBehavior = false;
+            this.lsv_BillExport_DetailOfBillExport.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Number";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Unit";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Price";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Supplier";
+            this.columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Expiry Date";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Amount";
+            // 
             // panel48
             // 
             this.panel48.Controls.Add(this.label36);
@@ -3311,6 +3361,24 @@ namespace QuanLiChuoiCF
             this.label35.TabIndex = 0;
             this.label35.Text = "Date:";
             // 
+            // panel51
+            // 
+            this.panel51.Controls.Add(this.btn_BillExport_Delete);
+            this.panel51.Location = new System.Drawing.Point(727, 14);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(503, 40);
+            this.panel51.TabIndex = 1;
+            // 
+            // btn_BillExport_Delete
+            // 
+            this.btn_BillExport_Delete.Location = new System.Drawing.Point(11, 5);
+            this.btn_BillExport_Delete.Name = "btn_BillExport_Delete";
+            this.btn_BillExport_Delete.Size = new System.Drawing.Size(80, 30);
+            this.btn_BillExport_Delete.TabIndex = 3;
+            this.btn_BillExport_Delete.Text = "Delete";
+            this.btn_BillExport_Delete.UseVisualStyleBackColor = true;
+            this.btn_BillExport_Delete.Click += new System.EventHandler(this.btn_BillExport_Delete_Click);
+            // 
             // lb_BillExport_Notify
             // 
             this.lb_BillExport_Notify.AutoSize = true;
@@ -3342,73 +3410,6 @@ namespace QuanLiChuoiCF
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // lsv_BillExport_DetailOfBillExport
-            // 
-            this.lsv_BillExport_DetailOfBillExport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.lsv_BillExport_DetailOfBillExport.FullRowSelect = true;
-            this.lsv_BillExport_DetailOfBillExport.HideSelection = false;
-            this.lsv_BillExport_DetailOfBillExport.Location = new System.Drawing.Point(727, 276);
-            this.lsv_BillExport_DetailOfBillExport.Name = "lsv_BillExport_DetailOfBillExport";
-            this.lsv_BillExport_DetailOfBillExport.Size = new System.Drawing.Size(509, 345);
-            this.lsv_BillExport_DetailOfBillExport.TabIndex = 38;
-            this.lsv_BillExport_DetailOfBillExport.UseCompatibleStateImageBehavior = false;
-            this.lsv_BillExport_DetailOfBillExport.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Number";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Unit";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Price";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Supplier";
-            this.columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Expiry Date";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Amount";
-            // 
-            // btn_BillExport_Delete
-            // 
-            this.btn_BillExport_Delete.Location = new System.Drawing.Point(11, 5);
-            this.btn_BillExport_Delete.Name = "btn_BillExport_Delete";
-            this.btn_BillExport_Delete.Size = new System.Drawing.Size(80, 30);
-            this.btn_BillExport_Delete.TabIndex = 3;
-            this.btn_BillExport_Delete.Text = "Delete";
-            this.btn_BillExport_Delete.UseVisualStyleBackColor = true;
-            this.btn_BillExport_Delete.Click += new System.EventHandler(this.btn_BillExport_Delete_Click);
-            // 
-            // panel51
-            // 
-            this.panel51.Controls.Add(this.btn_BillExport_Delete);
-            this.panel51.Location = new System.Drawing.Point(727, 14);
-            this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(503, 40);
-            this.panel51.TabIndex = 1;
             // 
             // fAdmin
             // 
@@ -3527,10 +3528,10 @@ namespace QuanLiChuoiCF
             this.panel50.ResumeLayout(false);
             this.panel50.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nm_BillExport_TotalPrice)).EndInit();
+            this.panel51.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            this.panel51.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

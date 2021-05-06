@@ -79,7 +79,7 @@ namespace QuanLiChuoiCF
             pannel = pnl;
             GetPrintArea(pnl);
             printdoc1.Print();
-            this.Close();
+            this.Close();          
         }
         private void button1_Click(object sender, EventArgs e)
         {

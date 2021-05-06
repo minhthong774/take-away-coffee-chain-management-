@@ -73,6 +73,7 @@ namespace QuanLiChuoiCF
             this.txbIDOfEmployee.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txbIDOfEmployee.Location = new System.Drawing.Point(180, 80);
             this.txbIDOfEmployee.Name = "txbIDOfEmployee";
+            this.txbIDOfEmployee.ReadOnly = true;
             this.txbIDOfEmployee.Size = new System.Drawing.Size(364, 20);
             this.txbIDOfEmployee.TabIndex = 0;
             // 
