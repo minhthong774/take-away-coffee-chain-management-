@@ -29,6 +29,7 @@ namespace QuanLiChuoiCF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNewAccount));
             this.btnOK = new System.Windows.Forms.Button();
             this.lbID = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
@@ -46,17 +47,20 @@ namespace QuanLiChuoiCF
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.Wheat;
+            this.btnOK.ForeColor = System.Drawing.Color.Teal;
             this.btnOK.Location = new System.Drawing.Point(157, 220);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(119, 57);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOkClick);
             // 
             // lbID
             // 
             this.lbID.AutoSize = true;
+            this.lbID.ForeColor = System.Drawing.Color.Wheat;
             this.lbID.Location = new System.Drawing.Point(61, 57);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(56, 13);
@@ -66,6 +70,7 @@ namespace QuanLiChuoiCF
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
+            this.lbUserName.ForeColor = System.Drawing.Color.Wheat;
             this.lbUserName.Location = new System.Drawing.Point(61, 28);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(63, 13);
@@ -75,6 +80,7 @@ namespace QuanLiChuoiCF
             // lbType
             // 
             this.lbType.AutoSize = true;
+            this.lbType.ForeColor = System.Drawing.Color.Wheat;
             this.lbType.Location = new System.Drawing.Point(61, 89);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(37, 13);
@@ -84,6 +90,7 @@ namespace QuanLiChuoiCF
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
+            this.lbPassword.ForeColor = System.Drawing.Color.Wheat;
             this.lbPassword.Location = new System.Drawing.Point(61, 122);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(56, 13);
@@ -92,6 +99,7 @@ namespace QuanLiChuoiCF
             // 
             // txbUserName
             // 
+            this.txbUserName.ForeColor = System.Drawing.Color.Teal;
             this.txbUserName.Location = new System.Drawing.Point(157, 21);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.Size = new System.Drawing.Size(236, 20);
@@ -99,6 +107,7 @@ namespace QuanLiChuoiCF
             // 
             // txbPassword
             // 
+            this.txbPassword.ForeColor = System.Drawing.Color.Teal;
             this.txbPassword.Location = new System.Drawing.Point(157, 120);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(236, 20);
@@ -108,6 +117,7 @@ namespace QuanLiChuoiCF
             // lbConfirmPassword
             // 
             this.lbConfirmPassword.AutoSize = true;
+            this.lbConfirmPassword.ForeColor = System.Drawing.Color.Wheat;
             this.lbConfirmPassword.Location = new System.Drawing.Point(61, 157);
             this.lbConfirmPassword.Name = "lbConfirmPassword";
             this.lbConfirmPassword.Size = new System.Drawing.Size(94, 13);
@@ -116,6 +126,7 @@ namespace QuanLiChuoiCF
             // 
             // txbConfirmPassword
             // 
+            this.txbConfirmPassword.ForeColor = System.Drawing.Color.Teal;
             this.txbConfirmPassword.Location = new System.Drawing.Point(157, 156);
             this.txbConfirmPassword.Name = "txbConfirmPassword";
             this.txbConfirmPassword.Size = new System.Drawing.Size(236, 20);
@@ -124,6 +135,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbType
             // 
+            this.cbbType.ForeColor = System.Drawing.Color.Teal;
             this.cbbType.FormattingEnabled = true;
             this.cbbType.Location = new System.Drawing.Point(157, 85);
             this.cbbType.Name = "cbbType";
@@ -132,6 +144,7 @@ namespace QuanLiChuoiCF
             // 
             // cbbEmployee
             // 
+            this.cbbEmployee.ForeColor = System.Drawing.Color.Teal;
             this.cbbEmployee.FormattingEnabled = true;
             this.cbbEmployee.Location = new System.Drawing.Point(157, 49);
             this.cbbEmployee.Name = "cbbEmployee";
@@ -141,6 +154,7 @@ namespace QuanLiChuoiCF
             // lbNotify
             // 
             this.lbNotify.AutoSize = true;
+            this.lbNotify.ForeColor = System.Drawing.Color.Wheat;
             this.lbNotify.Location = new System.Drawing.Point(61, 202);
             this.lbNotify.Name = "lbNotify";
             this.lbNotify.Size = new System.Drawing.Size(37, 13);
@@ -150,6 +164,7 @@ namespace QuanLiChuoiCF
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Wheat;
             this.label1.Location = new System.Drawing.Point(61, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 52);
@@ -161,6 +176,7 @@ namespace QuanLiChuoiCF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(428, 377);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbNotify);
@@ -175,8 +191,10 @@ namespace QuanLiChuoiCF
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.btnOK);
+            this.ForeColor = System.Drawing.Color.Wheat;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fNewAccount";
-            this.Text = "fNewAccount";
+            this.Text = "New Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 

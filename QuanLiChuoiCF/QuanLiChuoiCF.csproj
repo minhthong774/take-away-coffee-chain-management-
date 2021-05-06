@@ -388,5 +388,44 @@
   <ItemGroup>
     <None Include="Resources\icons8_school_director_64px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checklist_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checklist.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_account_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_64px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_more_details.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_change.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_import_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_new_copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_manager.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

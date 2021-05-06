@@ -71,6 +71,26 @@ namespace QuanLiChuoiCF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_account_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_account_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_add {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon icons8_bribery {
@@ -111,6 +131,46 @@ namespace QuanLiChuoiCF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_64px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_cancel_64px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_64px_11 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_cancel_64px_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_change {
+            get {
+                object obj = ResourceManager.GetObject("icons8_change", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_checklist {
+            get {
+                object obj = ResourceManager.GetObject("icons8_checklist", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon icons8_coffee_to_go {
@@ -127,6 +187,16 @@ namespace QuanLiChuoiCF.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8_coffee_to_go_26px_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_export {
+            get {
+                object obj = ResourceManager.GetObject("icons8_export", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -161,6 +231,16 @@ namespace QuanLiChuoiCF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_manager {
+            get {
+                object obj = ResourceManager.GetObject("icons8_manager", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_microsoft_admin_64px_1 {
@@ -177,6 +257,16 @@ namespace QuanLiChuoiCF.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8_minus_64px_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icons8_more_details {
+            get {
+                object obj = ResourceManager.GetObject("icons8_more_details", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -206,6 +296,16 @@ namespace QuanLiChuoiCF.Properties {
         internal static System.Drawing.Bitmap icons8_padlock_64px {
             get {
                 object obj = ResourceManager.GetObject("icons8_padlock_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_password_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
