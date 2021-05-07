@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<DateOff> GetDateOffs()
         {
             List<DateOff> dateOffs = new List<DateOff>();
-            string query = "USP_GetDateOffs;
+            string query = "USP_GetDateOffs";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow row in data.Rows)
             {

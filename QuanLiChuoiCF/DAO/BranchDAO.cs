@@ -21,7 +21,7 @@ namespace QuanLiChuoiCF.DAO
         {
             List<Branch> branches = new List<Branch>();
 
-            string query = "USP_GetBranch;
+            string query = "USP_GetBranch";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows)

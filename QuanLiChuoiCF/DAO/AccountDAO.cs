@@ -25,7 +25,7 @@ namespace QuanLiChuoiCF.DAO
 
         public Account GetAccountByUsername(string username)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetAccountByUserName", new object[] { username });
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetAccountByUserName @username", new object[] { username });
 
             if (data!=null)
             {
