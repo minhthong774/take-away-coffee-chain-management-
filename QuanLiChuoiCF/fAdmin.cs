@@ -2732,5 +2732,10 @@ namespace QuanLiChuoiCF
         {
             newSupplier();
         }
+
+        private void cbb_Bill_SearchBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

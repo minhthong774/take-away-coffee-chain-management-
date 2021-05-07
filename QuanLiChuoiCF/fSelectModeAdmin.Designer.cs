@@ -44,7 +44,7 @@ namespace QuanLiChuoiCF
             this.btnWorkManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnWorkManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWorkManagement.ForeColor = System.Drawing.Color.Wheat;
-            this.btnWorkManagement.Location = new System.Drawing.Point(15, 5);
+            this.btnWorkManagement.Location = new System.Drawing.Point(12, 3);
             this.btnWorkManagement.Name = "btnWorkManagement";
             this.btnWorkManagement.Size = new System.Drawing.Size(250, 100);
             this.btnWorkManagement.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace QuanLiChuoiCF
             this.btnAdminMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdminMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdminMode.ForeColor = System.Drawing.Color.Wheat;
-            this.btnAdminMode.Location = new System.Drawing.Point(15, 120);
+            this.btnAdminMode.Location = new System.Drawing.Point(12, 120);
             this.btnAdminMode.Name = "btnAdminMode";
             this.btnAdminMode.Size = new System.Drawing.Size(250, 99);
             this.btnAdminMode.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace QuanLiChuoiCF
             this.btnExportMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExportMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportMaterial.ForeColor = System.Drawing.Color.Wheat;
-            this.btnExportMaterial.Location = new System.Drawing.Point(284, 5);
+            this.btnExportMaterial.Location = new System.Drawing.Point(286, 3);
             this.btnExportMaterial.Name = "btnExportMaterial";
             this.btnExportMaterial.Size = new System.Drawing.Size(250, 100);
             this.btnExportMaterial.TabIndex = 1;
@@ -86,7 +86,7 @@ namespace QuanLiChuoiCF
             this.btnImportMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImportMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportMaterial.ForeColor = System.Drawing.Color.Wheat;
-            this.btnImportMaterial.Location = new System.Drawing.Point(284, 120);
+            this.btnImportMaterial.Location = new System.Drawing.Point(286, 120);
             this.btnImportMaterial.Name = "btnImportMaterial";
             this.btnImportMaterial.Size = new System.Drawing.Size(250, 99);
             this.btnImportMaterial.TabIndex = 3;
@@ -96,7 +96,6 @@ namespace QuanLiChuoiCF
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.225806F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.77419F));
