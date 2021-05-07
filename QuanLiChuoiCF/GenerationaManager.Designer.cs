@@ -65,7 +65,7 @@
             this.tp_AccountProfile = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txbConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.txbNewPassword = new System.Windows.Forms.TextBox();
@@ -103,6 +103,7 @@
             this.tc_Employee.Size = new System.Drawing.Size(1292, 674);
             this.tc_Employee.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tc_Employee.TabIndex = 1;
+            this.tc_Employee.Selected += new System.Windows.Forms.TabControlEventHandler(this.tc_Employee_Selected);
             // 
             // tp_PaymentManager
             // 
@@ -222,7 +223,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Wheat;
-            this.panel6.Location = new System.Drawing.Point(745, 4);
+            this.panel6.Location = new System.Drawing.Point(745, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(31, 617);
             this.panel6.TabIndex = 18;
@@ -512,7 +513,7 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.btnCapNhat);
+            this.panel9.Controls.Add(this.btnUpdate);
             this.panel9.Controls.Add(this.btnThoat);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(202, 533);
@@ -520,18 +521,19 @@
             this.panel9.Size = new System.Drawing.Size(1073, 70);
             this.panel9.TabIndex = 9;
             // 
-            // btnCapNhat
+            // btnUpdate
             // 
-            this.btnCapNhat.BackColor = System.Drawing.Color.Teal;
-            this.btnCapNhat.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.ForeColor = System.Drawing.Color.Wheat;
-            this.btnCapNhat.Location = new System.Drawing.Point(0, 0);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(172, 70);
-            this.btnCapNhat.TabIndex = 4;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Wheat;
+            this.btnUpdate.Location = new System.Drawing.Point(0, 0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(172, 70);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnThoat
             // 
@@ -554,6 +556,7 @@
             this.txbConfirmNewPassword.Name = "txbConfirmNewPassword";
             this.txbConfirmNewPassword.Size = new System.Drawing.Size(364, 20);
             this.txbConfirmNewPassword.TabIndex = 3;
+            this.txbConfirmNewPassword.UseSystemPasswordChar = true;
             // 
             // txbNewPassword
             // 
@@ -562,6 +565,7 @@
             this.txbNewPassword.Name = "txbNewPassword";
             this.txbNewPassword.Size = new System.Drawing.Size(364, 20);
             this.txbNewPassword.TabIndex = 2;
+            this.txbNewPassword.UseSystemPasswordChar = true;
             // 
             // txbPassword
             // 
@@ -570,6 +574,7 @@
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(364, 20);
             this.txbPassword.TabIndex = 1;
+            this.txbPassword.UseSystemPasswordChar = true;
             // 
             // txbIDOfEmployee
             // 
@@ -719,7 +724,7 @@
         private System.Windows.Forms.TabPage tp_AccountProfile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txbConfirmNewPassword;
         private System.Windows.Forms.TextBox txbNewPassword;

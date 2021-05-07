@@ -20,7 +20,7 @@ namespace QuanLiChuoiCF.DAO
         public List<InforOfMaterial> GetInfoOfMaterials()
         {
             List<InforOfMaterial> infoOfMaterials = new List<InforOfMaterial>();
-            string query = "select * from dbo.InforOfMaterial";
+            string query = "USP_GetInfoOfMaterials";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -50,8 +50,8 @@ namespace QuanLiChuoiCF.DAO
 
         public string GetNameByID(string iD)
         {
-            string query = string.Format("select Name from dbo.InforOfMaterial where IDInfoOfMaterial ='{0}'", iD);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetNameByIDInforMaterial @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { iD });
             if (data.Rows.Count > 0)
             {
                 return data.Rows[0]["Name"].ToString();
@@ -61,8 +61,8 @@ namespace QuanLiChuoiCF.DAO
 
         public InforOfMaterial GetInfoOfMaterial(string ID)
         {
-            string query = "select * from dbo.InforOfMaterial where IDInfoOfMaterial = '"+ID+"'";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetInfoOfMaterial @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { ID });
             if (data.Rows.Count > 0)
             {
                 return new InforOfMaterial(data.Rows[0]);

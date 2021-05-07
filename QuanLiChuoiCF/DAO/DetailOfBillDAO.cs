@@ -21,7 +21,7 @@ namespace QuanLiChuoiCF.DAO
         public List<DetailOfBill> GetDetailOfBills(string id)
         {
             List<DetailOfBill> listDetailOfBill = new List<DetailOfBill>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select *from dbo.DetailOfBill where  IDbill='" + id + "' ORDER BY IDBill, IDDrink");
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetDetailOfBill @id", new object[] { id });
             foreach(DataRow item in data.Rows)
             {
                 DetailOfBill detail = new DetailOfBill(item);

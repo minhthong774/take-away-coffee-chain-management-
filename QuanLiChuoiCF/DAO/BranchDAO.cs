@@ -21,7 +21,7 @@ namespace QuanLiChuoiCF.DAO
         {
             List<Branch> branches = new List<Branch>();
 
-            string query = "select * from Branch ORDER BY IDBranch";
+            string query = "USP_GetBranch";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows)
@@ -52,8 +52,8 @@ namespace QuanLiChuoiCF.DAO
 
         public string GetNameByID(string iD)
         {
-            string query = string.Format("select Name from Branch where IDBranch = '{0}'", iD);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetNameBrandByID @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query,new object[] { iD });
             if (data.Rows.Count > 0)
             {
                 return data.Rows[0]["Name"].ToString();

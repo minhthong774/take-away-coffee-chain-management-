@@ -20,7 +20,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Material> GetMaterials()
         {
             List<Material> materials = new List<Material>();
-            string query = "select * from dbo.Material ORDER BY IDMaterial";
+            string query = "USO_GetMaterials";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -57,8 +57,8 @@ namespace QuanLiChuoiCF.DAO
 
         public Material GetMaterial(string IDMaterial)
         {
-            string query = string.Format("select * from dbo.Material where IDMaterial = '{0}'",IDMaterial);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetMaterialByID @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IDMaterial });
             if (data.Rows.Count > 0)
             {
                 return new Material(data.Rows[0]);

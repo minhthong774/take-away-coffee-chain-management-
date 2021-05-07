@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<BillExport> GetBillExports()
         {
             List<BillExport> billExports = new List<BillExport>();
-            string query = "select * from dbo.BillExport";
+            string query = "USP_GetBillExport";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {

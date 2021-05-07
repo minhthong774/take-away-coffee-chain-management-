@@ -30,7 +30,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Drink> GetDrinks()
         {
             List<Drink> Drinks = new List<Drink>();
-            string query = "select * from dbo.Drink ORDER BY IDDrink";
+            string query = "USP_GetDrink";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach(DataRow item in data.Rows)
@@ -69,8 +69,8 @@ namespace QuanLiChuoiCF.DAO
 
         public Drink GetDrink(string ID)
         {
-            string query = "select * from dbo.Drink where IDDrink = '"+ID+"'";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetDrinkByID @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { ID });
 
             if (data.Rows.Count > 0)
             {
