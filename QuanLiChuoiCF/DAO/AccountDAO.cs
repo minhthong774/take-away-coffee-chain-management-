@@ -25,7 +25,7 @@ namespace QuanLiChuoiCF.DAO
 
         public Account GetAccountByUsername(string username)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from dbo.account where Username = '" + username + "'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetAccountByUserName", new object[] { username });
 
             if (data!=null)
             {
@@ -38,7 +38,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Account> GetAccounts()
         {
             List<Account> accounts = new List<Account>();
-            string query = "select * from dbo.Account ORDER BY Username";
+            string query = "USP_Account";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -73,11 +73,21 @@ namespace QuanLiChuoiCF.DAO
 
         public string getBranch(string username)
         {
-            string query = string.Format("select Employee.IDBranch from dbo.Account, dbo.Employee where Account.IDEmployee = Employee.IDEmployee and Account.Username = '{0}'", username);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetBranchByUserName @username";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query,new object[] { username });
             if (data.Rows.Count > 0) 
             {
                 return data.Rows[0]["IDBranch"].ToString();
+            }
+            return null;
+        }
+        public Employee GetEmployeethroughUserName(string username)
+        {
+            string querry = "uspGetEmpolyeeByUserName @userName";
+            DataTable employee = DataProvider.Instance.ExecuteQuery(querry, new object[] { username });
+            if (employee.Rows.Count > 0)
+            {
+                return new Employee(employee.Rows[0]);
             }
             return null;
         }

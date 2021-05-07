@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Supplier> GetSuppliers()
         {
             List<Supplier> bills = new List<Supplier>();
-            string query = "select * from dbo.Supplier ORDER BY IDSupplier";
+            string query = "USP_GetSuppliers";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -50,8 +50,8 @@ namespace QuanLiChuoiCF.DAO
 
         public string GetNameByID(string iD)
         {
-            string query = string.Format("select Name from dbo.Supplier where IDSupplier = '{0}'", iD);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetNameByIDSupplier @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { iD});
 
             if (data.Rows.Count > 0)
             {

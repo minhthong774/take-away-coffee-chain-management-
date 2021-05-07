@@ -294,7 +294,7 @@ namespace QuanLiChuoiCF
                     break;
             } 
         }
-        void LoadChangeSortAndSearchData()
+        public void LoadChangeSortAndSearchData()
         {
             flpDrink.Controls.Clear();
             cbb_addDrink.Items.Clear();
@@ -311,6 +311,44 @@ namespace QuanLiChuoiCF
                 flpDrink.Controls.Add(btn);
                 flpDrink.FlowDirection = FlowDirection.LeftToRight;
                 cbb_addDrink.Items.Add(item.ID + "-" + item.Name);
+            }
+        }
+        public void LoadEmployeeIntoForm()
+        {
+            Employee emp = AccountDAO.Instance.GetEmployeethroughUserName(fLogin.userName);
+            Account ac = AccountDAO.Instance.GetAccountByUsername(fLogin.userName);
+            txbIDOfEmployee.Text = emp.IDEmployee;
+            txbUsername.Text = ac.Username;
+            txbPassword.Text = ac.Password;
+            txbNewPassword.Text = "";
+            txbConfirmNewPassword.Text = "";
+        }
+        public bool  CanResetPsWd()
+        {
+           if(txbNewPassword.Text==txbConfirmNewPassword.Text)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void tc_Employee_Selected(object sender, TabControlEventArgs e)
+        {
+            LoadEmployeeIntoForm();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if(CanResetPsWd() && txbNewPassword!=null)
+            {
+                AccountDAO.Instance.ChangePassword(fLogin.userName, txbNewPassword.Text);
+                MessageBox.Show(this, "Uppdate Password Successfully!!", "Change Password", MessageBoxButtons.OK);
+                LoadEmployeeIntoForm();
+            }
+            else
+            {
+                MessageBox.Show(this, "Your Confirm Password Is Not Correct!!", "Change Password", MessageBoxButtons.OK);
+                txbConfirmNewPassword.Focus();
             }
         }
     }

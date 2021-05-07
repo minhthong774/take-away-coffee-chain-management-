@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<DateWork> GetDateWorks()
         {
             List<DateWork> dateWorks = new List<DateWork>();
-            string query = "select * from dbo.PartTimeEmployeeManagement";
+            string query = "USP_GetDateWorks";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -61,8 +61,8 @@ namespace QuanLiChuoiCF.DAO
         public List<DateWork> GetDateWorksByIDEmployee(string iDEmployee)
         {
             List<DateWork> dateWorks = new List<DateWork>();
-            string query = string.Format("select * from dbo.PartTimeEmployeeManagement where IDEmployee = '{0}'", iDEmployee);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetDateWorksByIDEmployee @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { iDEmployee});
             foreach (DataRow row in data.Rows)
             {
                 dateWorks.Add(new DateWork(row));

@@ -20,7 +20,7 @@ namespace QuanLiChuoiCF.DAO
         public List<DetailOfBillExport> GetDetailOfBillExports()
         {
             List<DetailOfBillExport> detailOfBillExports = new List<DetailOfBillExport>();
-            string query = "select * from dbo.DetailOfBillExport";
+            string query = "USP_GetDetailOfBillExport";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -32,8 +32,8 @@ namespace QuanLiChuoiCF.DAO
         public List<DetailOfBillExport> GetDetailOfBillExports(string iDBillExport)
         {
             List<DetailOfBillExport> detailOfBillExports = new List<DetailOfBillExport>();
-            string query = string.Format("select * from dbo.DetailOfBillExport where IDBillExport = '{0}'", iDBillExport);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetDetailOfBillExports @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { iDBillExport });
             foreach (DataRow item in data.Rows)
             {
                 detailOfBillExports.Add(new DetailOfBillExport(item));

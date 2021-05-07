@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Bill> GetBills()
         {
             List<Bill> bills = new List<Bill>();
-            string query = "select * from dbo.Bill ORDER BY IDBill";
+            string query = "USP_GetBill";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -57,8 +57,8 @@ namespace QuanLiChuoiCF.DAO
         public List<Bill> GetBillsByBranch(string IDBranch)
         {
             List<Bill> bills = new List<Bill>();
-            string query = string.Format("select * from dbo.Bill where IDBranch = '{0}' ORDER BY IDBill",IDBranch);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetBilsByBranch @id" ;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query,new object[] { IDBranch });
             foreach (DataRow item in data.Rows)
             {
                 bills.Add(new Bill(item));
@@ -66,7 +66,11 @@ namespace QuanLiChuoiCF.DAO
 
             return bills;
         }
-
+        /// <summary>
+        ///Sao lai IDBranch maf truyen vao laf IDBill
+        /// </summary>
+        /// <param name="IDBill"></param>
+        /// <returns></returns>
         public Bill GetBill(string IDBill)
         {
             string query = string.Format("select * from dbo.Bill where IDBranch = '{0}'", IDBill);

@@ -22,7 +22,7 @@ namespace QuanLiChuoiCF.DAO
         public List<Employee> GetEmployees()
         {
             List<Employee> employees = new List<Employee>();
-            string query = "select * from dbo.Employee ORDER BY IDEmployee";
+            string query = "USP_GetEmployee";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -61,8 +61,8 @@ namespace QuanLiChuoiCF.DAO
 
         public string GetNameByIDEmployee(string IDEmployee)
         {
-            string query = string.Format("select firstname, lastname from dbo.Employee where IDEmployee = '{0}'", IDEmployee);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetNameByIDEmployee  @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IDEmployee });
             if (data.Rows.Count > 0)
             {
                 return data.Rows[0]["FirstName"].ToString() + data.Rows[0]["LastName"].ToString();
@@ -73,11 +73,12 @@ namespace QuanLiChuoiCF.DAO
         public Employee GetEmployee(string IDEmployee)
         {
             List<Employee> employees = new List<Employee>();
-            string query = string.Format("select * from dbo.Employee where IDEmployee = '{0}'", IDEmployee);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string query = "USP_GetEmployeeByID @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IDEmployee });
             if (data.Rows.Count > 0) return new Employee(data.Rows[0]);
             return null;
         }
+      
 
     }
 }
