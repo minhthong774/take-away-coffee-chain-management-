@@ -73,11 +73,23 @@ namespace QuanLiChuoiCF.DAO
         /// <returns></returns>
         public Bill GetBill(string IDBill)
         {
-            string query = string.Format("select * from dbo.Bill where IDBranch = '{0}'", IDBill);
+            string query = string.Format("select * from dbo.Bill where IDBill = '{0}'", IDBill);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             if (data.Rows.Count > 0)
                 return new Bill(data.Rows[0]);
             return null;
+        }
+
+        public int GetTotalAmount(string IDBill)
+        {
+            int totalAmount=0;
+            string query = "USP_GetTotalAmoutByIDBill @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IDBill });
+            if (data.Rows.Count > 0)
+            {
+                totalAmount = (int)(float.Parse(data.Rows[0]["totalAmount"].ToString()));
+            }
+            return totalAmount;
         }
 
     }

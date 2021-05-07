@@ -30,6 +30,7 @@ namespace QuanLiChuoiCF
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
@@ -41,13 +42,12 @@ namespace QuanLiChuoiCF
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +58,15 @@ namespace QuanLiChuoiCF
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(412, 280);
             this.panel1.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Wheat;
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Location = new System.Drawing.Point(0, 37);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(412, 63);
+            this.panel6.TabIndex = 1;
             // 
             // label3
             // 
@@ -111,7 +120,7 @@ namespace QuanLiChuoiCF
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(303, 23);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "thong123ABC@";
+            this.txtPassword.Text = "admin";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
@@ -142,7 +151,7 @@ namespace QuanLiChuoiCF
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(303, 23);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "minhthong774";
+            this.txtUsername.Text = "admin";
             // 
             // label1
             // 
@@ -171,15 +180,6 @@ namespace QuanLiChuoiCF
             this.panel5.Size = new System.Drawing.Size(206, 75);
             this.panel5.TabIndex = 6;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Wheat;
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(0, 37);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(412, 63);
-            this.panel6.TabIndex = 1;
-            // 
             // fLogin
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -197,14 +197,14 @@ namespace QuanLiChuoiCF
             this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

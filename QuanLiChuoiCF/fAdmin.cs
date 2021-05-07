@@ -2647,10 +2647,24 @@ namespace QuanLiChuoiCF
         {
             if (lsv_Bill.SelectedItems.Count > 0)
             {
-                txb_Bill_IDBill.Text = lsv_Bill.SelectedItems[0].SubItems[0].Text;
+                string IDBill = lsv_Bill.SelectedItems[0].SubItems[0].Text;
+                txb_Bill_IDBill.Text = IDBill;
                 cbb_Bill_Branch.Text = lsv_Bill.SelectedItems[0].SubItems[1].Text;
                 dtp_Bill_DateCheckIn.Value = DateTime.Parse(lsv_Bill.SelectedItems[0].SubItems[2].Text);
-                nud_Bill_TotalAmount.Value = int.Parse(lsv_Bill.SelectedItems[0].SubItems[3].Text);
+                nud_Bill_TotalAmount.Value = BillDAO.Instance.GetTotalAmount(IDBill);
+
+                lsvDetailOfBill.Items.Clear();
+                List<DetailOfBill> detailOfBills = new List<DetailOfBill>();
+                detailOfBills = DetailOfBillDAO.Instance.GetDetailOfBills(IDBill);
+                foreach(DetailOfBill detailOfBill in detailOfBills)
+                {
+                    Drink drink = DrinkDAO.Instance.GetDrink(detailOfBill.IDDrink);
+                    ListViewItem item = new ListViewItem(drink.Name);
+                    item.SubItems.Add(detailOfBill.Count.ToString());
+                    item.SubItems.Add(drink.Price.ToString());
+                    item.SubItems.Add((detailOfBill.Count*drink.Price).ToString());
+                    lsvDetailOfBill.Items.Add(item);
+                }
             }
         }
 
