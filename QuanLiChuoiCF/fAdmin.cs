@@ -1703,67 +1703,67 @@ namespace QuanLiChuoiCF
             LoadBillsToLsvBill(searchedBills);
         }
 
-        private void btn_Bill_NewClick(object sender, EventArgs e)
-        {
-            newBill();
-        }
+        //private void btn_Bill_NewClick(object sender, EventArgs e)
+        //{
+        //    newBill();
+        //}
 
-        private void btn_Bill_AddClick(object sender, EventArgs e)
-        {
-            string IDBill = txb_Bill_IDBill.Text;
-            foreach(Bill item in bills)
-            {
-                if(IDBill == item.IDBill)
-                {
-                    lb_Bill_Notify.Text = "WARNING: ID was existed in database, please press new for new ID";
-                    btn_Bill_Clear.Focus();
-                    return;
-                }
-            }
-            string IDBranch = cbb_Bill_Branch.SelectedItem.ToString();
-            if(IDBranch == "")
-            {
-                lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
-                cbb_Bill_Branch.Focus();
-                return;
-            }
-            DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
+        //private void btn_Bill_AddClick(object sender, EventArgs e)
+        //{
+        //    string IDBill = txb_Bill_IDBill.Text;
+        //    foreach(Bill item in bills)
+        //    {
+        //        if(IDBill == item.IDBill)
+        //        {
+        //            lb_Bill_Notify.Text = "WARNING: ID was existed in database, please press new for new ID";
+        //            btn_Bill_Clear.Focus();
+        //            return;
+        //        }
+        //    }
+        //    string IDBranch = cbb_Bill_Branch.SelectedItem.ToString();
+        //    if(IDBranch == "")
+        //    {
+        //        lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
+        //        cbb_Bill_Branch.Focus();
+        //        return;
+        //    }
+        //    DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
 
-            if (BillDAO.Instance.AddBill(IDBill, IDBranch, dateCheckIn))
-            {
-                lb_Bill_Notify.Text = "NOTIFY: Bill was added Successfully";
-                LoadBill();
-                newBill();
-            }
-            else
-            {
-                lb_Bill_Notify.Text = "NOTIFY: Failed to added bill";
-            }
-        }
+        //    if (BillDAO.Instance.AddBill(IDBill, IDBranch, dateCheckIn))
+        //    {
+        //        lb_Bill_Notify.Text = "NOTIFY: Bill was added Successfully";
+        //        LoadBill();
+        //        newBill();
+        //    }
+        //    else
+        //    {
+        //        lb_Bill_Notify.Text = "NOTIFY: Failed to added bill";
+        //    }
+        //}
 
-        private void btn_Bill_UpdateClick(object sender, EventArgs e)
-        {
-            string IDBill = txb_Bill_IDBill.Text;
+        //private void btn_Bill_UpdateClick(object sender, EventArgs e)
+        //{
+        //    string IDBill = txb_Bill_IDBill.Text;
 
-            string IDBranch = cbb_Bill_Branch.SelectedItem.ToString();
-            if (IDBranch == "")
-            {
-                lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
-                return;
-            }
+        //    string IDBranch = cbb_Bill_Branch.SelectedItem.ToString();
+        //    if (IDBranch == "")
+        //    {
+        //        lb_Bill_Notify.Text = "WARNING: ID of branch can't be empty";
+        //        return;
+        //    }
 
-            DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
+        //    DateTime dateCheckIn = dtp_Bill_DateCheckIn.Value;
 
-            if (BillDAO.Instance.UpdateBill(IDBill, IDBranch, dateCheckIn))
-            {
-                lb_Bill_Notify.Text = "NOTIFY: Bill was updated Successfully";
-                LoadBill();
-            }
-            else
-            {
-                lb_Bill_Notify.Text = "NOTIFY: Failed to update bill";
-            }
-        }
+        //    if (BillDAO.Instance.UpdateBill(IDBill, IDBranch, dateCheckIn))
+        //    {
+        //        lb_Bill_Notify.Text = "NOTIFY: Bill was updated Successfully";
+        //        LoadBill();
+        //    }
+        //    else
+        //    {
+        //        lb_Bill_Notify.Text = "NOTIFY: Failed to update bill";
+        //    }
+        //}
 
         private void btn_Bill_DeleteClick(object sender, EventArgs e)
         {
@@ -2320,14 +2320,14 @@ namespace QuanLiChuoiCF
             txb_InforOfMaterial_Name.Focus();
         }
 
-        private void newBill()
-        {
-            txb_Bill_IDBill.Text = getIDIncrea(lastIDBill);
-            cbb_Bill_Branch.SelectedItem = cbb_Bill_Branch.Items[0];
-            dtp_Bill_DateCheckIn.Value = DateTime.Now;
-            nud_Bill_TotalAmount.Value = 100000;
-            cbb_Bill_Branch.Focus();
-        }
+        //private void newBill()
+        //{
+        //    txb_Bill_IDBill.Text = getIDIncrea(lastIDBill);
+        //    cbb_Bill_Branch.SelectedItem = cbb_Bill_Branch.Items[0];
+        //    dtp_Bill_DateCheckIn.Value = DateTime.Now;
+        //    nud_Bill_TotalAmount.Value = 100000;
+        //    cbb_Bill_Branch.Focus();
+        //}
 
         private void newSupplier()
         {

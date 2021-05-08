@@ -209,3 +209,32 @@ begin
 select Name from dbo.Supplier where IDSupplier =@id
 end;
 go
+
+create procedure USP_GetTotalAmoutByIDBill
+@id char(10)
+as
+begin
+select sum(total) as totalAmount
+from(
+select count*price as total
+from dbo.DetailOfBill, dbo.Drink
+where dbo.DetailOfBill.IDBill = @id and dbo.Drink.IDDrink = dbo.DetailOfBill.IDDrink ) a
+end;
+go
+
+create procedure USP_GetTotalAmoutByIDBillExport
+@id char(10)
+as
+begin
+select sum(total) as totalAmount
+from(
+select dbo.DetailOfBillExport.Count*dbo.InforOfMaterial.Price as total
+from dbo.DetailOfBillExport, dbo.Material, dbo.InforOfMaterial
+where dbo.DetailOfBillExport.IDBillExport = @id and dbo.Material.IDMaterial = dbo.DetailOfBillExport.IDMaterial and dbo.InforOfMaterial.IDInfoOfMaterial = dbo.Material.IDInfoOfMaterial ) a
+end;
+go
+
+drop proc USP_GetTotalAmoutByIDBill
+go
+drop proc USP_GetTotalAmoutByIDBillExport
+go

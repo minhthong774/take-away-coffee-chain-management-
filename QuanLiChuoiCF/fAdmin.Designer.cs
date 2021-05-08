@@ -244,9 +244,6 @@ namespace QuanLiChuoiCF
             this.lb_Bill_Branch = new System.Windows.Forms.Label();
             this.lb_Bill_DateCheckIn = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
-            this.btn_Bill_Clear = new System.Windows.Forms.Button();
-            this.btn_Bill_Add = new System.Windows.Forms.Button();
-            this.btn_Bill_Update = new System.Windows.Forms.Button();
             this.btn_Bill_Delete = new System.Windows.Forms.Button();
             this.lb_Bill_Notify = new System.Windows.Forms.Label();
             this.tpSupplier = new System.Windows.Forms.TabPage();
@@ -1084,9 +1081,9 @@ namespace QuanLiChuoiCF
             this.tab.Controls.Add(this.tbAccount);
             this.tab.Controls.Add(this.tpEmployee);
             this.tab.Controls.Add(this.tpInfoOfMaterial);
-            this.tab.Controls.Add(this.tpBill);
             this.tab.Controls.Add(this.tpSupplier);
             this.tab.Controls.Add(this.tpWarehouse);
+            this.tab.Controls.Add(this.tpBill);
             this.tab.Controls.Add(this.tpBillExport);
             this.tab.Location = new System.Drawing.Point(12, 12);
             this.tab.Name = "tab";
@@ -2414,48 +2411,15 @@ namespace QuanLiChuoiCF
             // 
             // panel29
             // 
-            this.panel29.Controls.Add(this.btn_Bill_Clear);
-            this.panel29.Controls.Add(this.btn_Bill_Add);
-            this.panel29.Controls.Add(this.btn_Bill_Update);
             this.panel29.Controls.Add(this.btn_Bill_Delete);
             this.panel29.Location = new System.Drawing.Point(725, 10);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(505, 40);
             this.panel29.TabIndex = 1;
             // 
-            // btn_Bill_Clear
-            // 
-            this.btn_Bill_Clear.Location = new System.Drawing.Point(257, 5);
-            this.btn_Bill_Clear.Name = "btn_Bill_Clear";
-            this.btn_Bill_Clear.Size = new System.Drawing.Size(80, 30);
-            this.btn_Bill_Clear.TabIndex = 0;
-            this.btn_Bill_Clear.Text = "Clear";
-            this.btn_Bill_Clear.UseVisualStyleBackColor = true;
-            this.btn_Bill_Clear.Click += new System.EventHandler(this.btn_Bill_NewClick);
-            // 
-            // btn_Bill_Add
-            // 
-            this.btn_Bill_Add.Location = new System.Drawing.Point(3, 5);
-            this.btn_Bill_Add.Name = "btn_Bill_Add";
-            this.btn_Bill_Add.Size = new System.Drawing.Size(80, 30);
-            this.btn_Bill_Add.TabIndex = 1;
-            this.btn_Bill_Add.Text = "Add";
-            this.btn_Bill_Add.UseVisualStyleBackColor = true;
-            this.btn_Bill_Add.Click += new System.EventHandler(this.btn_Bill_AddClick);
-            // 
-            // btn_Bill_Update
-            // 
-            this.btn_Bill_Update.Location = new System.Drawing.Point(89, 5);
-            this.btn_Bill_Update.Name = "btn_Bill_Update";
-            this.btn_Bill_Update.Size = new System.Drawing.Size(80, 30);
-            this.btn_Bill_Update.TabIndex = 2;
-            this.btn_Bill_Update.Text = "Update";
-            this.btn_Bill_Update.UseVisualStyleBackColor = true;
-            this.btn_Bill_Update.Click += new System.EventHandler(this.btn_Bill_UpdateClick);
-            // 
             // btn_Bill_Delete
             // 
-            this.btn_Bill_Delete.Location = new System.Drawing.Point(171, 5);
+            this.btn_Bill_Delete.Location = new System.Drawing.Point(3, 3);
             this.btn_Bill_Delete.Name = "btn_Bill_Delete";
             this.btn_Bill_Delete.Size = new System.Drawing.Size(80, 30);
             this.btn_Bill_Delete.TabIndex = 3;
@@ -3624,10 +3588,7 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Label lb_Bill_Branch;
         private System.Windows.Forms.Label lb_Bill_DateCheckIn;
         private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Button btn_Bill_Clear;
-        private System.Windows.Forms.Button btn_Bill_Update;
         private System.Windows.Forms.Button btn_Bill_Delete;
-        private System.Windows.Forms.Button btn_Bill_Add;
         private System.Windows.Forms.Label lb_Bill_Notify;
         private QuanLiChuoiCFDataSet quanLiChuoiCFDataSet;
         private System.Windows.Forms.BindingSource goodsBindingSource;
