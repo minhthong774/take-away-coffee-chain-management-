@@ -17,9 +17,9 @@ namespace QuanLiChuoiCF
         private List<InforOfMaterial> inforOfMaterials = new List<InforOfMaterial>();
         private List<InforOfMaterial> searchedInforOfMaterials = new List<InforOfMaterial>();
         private List<Material> materials = new List<Material>();
-        private string IDMaterial;
+        private string iDMaterial;
 
-        public string IDMaterial1 { get => IDMaterial; set => IDMaterial = value; }
+        public string IDMaterial { get => iDMaterial; set => iDMaterial = value; }
 
         public fImportMaterial()
         {
@@ -82,7 +82,7 @@ namespace QuanLiChuoiCF
                 listViewItem.SubItems.Add(inforOfMaterial.Price.ToString());
                 listViewItem.SubItems.Add((item.Amount * inforOfMaterial.Price).ToString());
                 lsvBillImport.Items.Add(listViewItem);
-                totalAmount = item.Amount * inforOfMaterial.Price;
+                totalAmount += item.Amount * inforOfMaterial.Price;
             }
             txbTotalAmount.Text = totalAmount.ToString();
         }
@@ -91,10 +91,10 @@ namespace QuanLiChuoiCF
         {
             Material[] a  = MaterialDAO.Instance.GetMaterials().ToArray();
             if(a.Length>0)
-                IDMaterial1 = fAdmin.getIDIncrea(a[a.Length - 1].IDMaterial);
+                IDMaterial = fAdmin.getIDIncrea(a[a.Length - 1].IDMaterial);
             else
             {
-                IDMaterial1 = "MA01";
+                IDMaterial = "MA01";
             }
         }
 
@@ -119,7 +119,18 @@ namespace QuanLiChuoiCF
             fEnterNumberOfMaterialImport f = sender as fEnterNumberOfMaterialImport;
             int count = f.value;
             DateTime expiryDate = f.expiryDate;
+            foreach(Material material in materials)
+            {
+                if(material.IDInfoOfMaterial == inforOfMaterial.IDInfoOfMaterial)
+                {
+                    material.Amount += count;
+                    material.AmountLeft += count;
+                    LoadLsvBillImport();
+                    return;
+                }
+            }
             materials.Add(new Material(IDMaterial, inforOfMaterial.IDInfoOfMaterial, count, count, DateTime.Now, expiryDate));
+            IDMaterial = fAdmin.getIDIncrea(IDMaterial);
             LoadLsvBillImport();
         }
 
@@ -157,9 +168,11 @@ namespace QuanLiChuoiCF
         {
             if (materials.Count > 0)
             {
-                foreach(Material material in materials)
+                GenIDMaterial();
+                foreach (Material material in materials)
                 {
-                    MaterialDAO.Instance.AddMaterial(material.IDMaterial, material.IDInfoOfMaterial, material.Amount, material.AmountLeft, material.DateAdded, material.ExpiryDate);
+                    MaterialDAO.Instance.AddMaterial(IDMaterial, material.IDInfoOfMaterial, material.Amount, material.AmountLeft, material.DateAdded, material.ExpiryDate);
+                    IDMaterial = fAdmin.getIDIncrea(IDMaterial);
                 }
                 lsvBillImport.Clear();
                 MessageBox.Show("Import successfully", "SUCCESSFULLY", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
