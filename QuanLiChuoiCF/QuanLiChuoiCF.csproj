@@ -427,5 +427,8 @@
   <ItemGroup>
     <None Include="Resources\icons8_manager.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icons8_microsoft_admin_1.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

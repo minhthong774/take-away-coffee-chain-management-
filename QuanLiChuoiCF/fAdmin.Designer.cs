@@ -31,6 +31,7 @@ namespace QuanLiChuoiCF
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ColumnHeader clHDrinkName;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.tbAccount = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel46 = new System.Windows.Forms.Panel();
@@ -2276,7 +2277,7 @@ namespace QuanLiChuoiCF
             this.panel26.Controls.Add(this.lsv_Bill);
             this.panel26.Location = new System.Drawing.Point(9, 63);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(710, 559);
+            this.panel26.Size = new System.Drawing.Size(710, 571);
             this.panel26.TabIndex = 22;
             // 
             // lsv_Bill
@@ -2290,7 +2291,7 @@ namespace QuanLiChuoiCF
             this.lsv_Bill.Location = new System.Drawing.Point(3, 3);
             this.lsv_Bill.MultiSelect = false;
             this.lsv_Bill.Name = "lsv_Bill";
-            this.lsv_Bill.Size = new System.Drawing.Size(700, 550);
+            this.lsv_Bill.Size = new System.Drawing.Size(700, 565);
             this.lsv_Bill.TabIndex = 0;
             this.lsv_Bill.UseCompatibleStateImageBehavior = false;
             this.lsv_Bill.View = System.Windows.Forms.View.Details;
@@ -3415,8 +3416,11 @@ namespace QuanLiChuoiCF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tab);
+            this.ForeColor = System.Drawing.Color.Teal;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";

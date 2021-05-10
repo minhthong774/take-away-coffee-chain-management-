@@ -345,7 +345,6 @@
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             this.numericUpDown1.Click += new System.EventHandler(this.numericUpDown1Click);
             // 
             // labelDrinkName
@@ -448,6 +447,7 @@
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
+            this.lsvBill.SelectedIndexChanged += new System.EventHandler(this.lsvSelectedIndexChanged);
             // 
             // columnHeader1
             // 
