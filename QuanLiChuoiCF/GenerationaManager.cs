@@ -97,14 +97,15 @@ namespace QuanLiChuoiCF
             if (name == "") return;
             int count = Convert.ToInt32(numericUpDown1.Value);
             numericUpDown1.Value = 1;
-            int price = 0, totalPriceRow;
+            int price = 0, totalPriceRow=0;
 
             //get price from drinks list
             foreach (Drink item in Drinks)
             {
-                if (item.Name == name)
+                if (item.Name == name.Split('-')[1])
                 {
                     price = item.Price;
+                    label1.Text = price.ToString();
                     break;
                 }
             }
@@ -119,16 +120,13 @@ namespace QuanLiChuoiCF
                         item.Remove();
                         return;
                     }
-
                     totalPriceRow = (count + last_count) * price;
                     totalPrice += count * price;
 
                     item.SubItems[1].Text = (count+last_count).ToString();
                     item.SubItems[2].Text = price.ToString();
                     item.SubItems[3].Text = totalPriceRow.ToString();
-
                     txbTotalPrice.Text = totalPrice.ToString();
-
                     return;
                 }
                 
@@ -140,7 +138,6 @@ namespace QuanLiChuoiCF
             lsvItem.SubItems.Add(price.ToString());
             lsvItem.SubItems.Add(totalPriceRow.ToString());
             totalPrice += totalPriceRow;
-
             lsvBill.Items.Add(lsvItem);
             txbTotalPrice.Text = totalPrice.ToString();
         }
@@ -239,13 +236,6 @@ namespace QuanLiChuoiCF
                 return new Branch(data.Rows[0]);
             }
             return null;
-        }
-
-
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
        
         private void cbb_Drink_SortBy_SelectedIndexChanged(object sender, EventArgs e)
