@@ -94,13 +94,18 @@ namespace QuanLiChuoiCF
             this.btnAddBranch = new System.Windows.Forms.Button();
             this.btnUpdateBranch = new System.Windows.Forms.Button();
             this.lb_Branch_Notify = new System.Windows.Forms.Label();
-            this.tpDoanhThu = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.tpStatictis = new System.Windows.Forms.TabPage();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.dtpkDateTo = new System.Windows.Forms.DateTimePicker();
-            this.dtpkDatFrom = new System.Windows.Forms.DateTimePicker();
-            this.btnThongKe = new System.Windows.Forms.Button();
+            this.dtpkDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.lb_Revenue_TotalRevenue = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.btnStatictis = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.cbb_Statistic_Branch = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dtgv_Revenue = new System.Windows.Forms.DataGridView();
             this.tab = new System.Windows.Forms.TabControl();
             this.tpDrink = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -356,6 +361,13 @@ namespace QuanLiChuoiCF
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.GoodsTableAdapter();
             this.supplierTableAdapter = new QuanLiChuoiCF.QuanLiChuoiCFDataSetTableAdapters.SupplierTableAdapter();
+            this.dtgv_Expenditure = new System.Windows.Forms.DataGridView();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.lb_Revenue_TotalExpenditure = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.lb_Revenue_TotalIncome = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
             clHDrinkName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbAccount.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -371,10 +383,9 @@ namespace QuanLiChuoiCF
             this.panel13.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.tpDoanhThu.SuspendLayout();
+            this.tpStatictis.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Revenue)).BeginInit();
             this.tab.SuspendLayout();
             this.tpDrink.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -433,6 +444,7 @@ namespace QuanLiChuoiCF
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Expenditure)).BeginInit();
             this.SuspendLayout();
             // 
             // clHDrinkName
@@ -1016,70 +1028,131 @@ namespace QuanLiChuoiCF
             this.lb_Branch_Notify.TabIndex = 6;
             this.lb_Branch_Notify.Text = "notify: ";
             // 
-            // tpDoanhThu
+            // tpStatictis
             // 
-            this.tpDoanhThu.Controls.Add(this.panel4);
-            this.tpDoanhThu.Controls.Add(this.panel3);
-            this.tpDoanhThu.Location = new System.Drawing.Point(4, 22);
-            this.tpDoanhThu.Name = "tpDoanhThu";
-            this.tpDoanhThu.Size = new System.Drawing.Size(1241, 640);
-            this.tpDoanhThu.TabIndex = 0;
-            this.tpDoanhThu.Text = "Doanh thu";
-            this.tpDoanhThu.UseVisualStyleBackColor = true;
+            this.tpStatictis.Controls.Add(this.label48);
+            this.tpStatictis.Controls.Add(this.label47);
+            this.tpStatictis.Controls.Add(this.label51);
+            this.tpStatictis.Controls.Add(this.lb_Revenue_TotalIncome);
+            this.tpStatictis.Controls.Add(this.label46);
+            this.tpStatictis.Controls.Add(this.label45);
+            this.tpStatictis.Controls.Add(this.dtpkDateTo);
+            this.tpStatictis.Controls.Add(this.dtpkDateFrom);
+            this.tpStatictis.Controls.Add(this.btnStatictis);
+            this.tpStatictis.Controls.Add(this.label43);
+            this.tpStatictis.Controls.Add(this.cbb_Statistic_Branch);
+            this.tpStatictis.Controls.Add(this.panel4);
+            this.tpStatictis.Location = new System.Drawing.Point(4, 22);
+            this.tpStatictis.Name = "tpStatictis";
+            this.tpStatictis.Size = new System.Drawing.Size(1241, 640);
+            this.tpStatictis.TabIndex = 0;
+            this.tpStatictis.Text = "Statictis";
+            this.tpStatictis.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // label46
             // 
-            this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Location = new System.Drawing.Point(0, 33);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(641, 458);
-            this.panel4.TabIndex = 8;
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(906, 163);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(45, 13);
+            this.label46.TabIndex = 13;
+            this.label46.Text = "Date to:";
             // 
-            // dataGridView1
+            // label45
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(634, 452);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dtpkDateTo);
-            this.panel3.Controls.Add(this.dtpkDatFrom);
-            this.panel3.Controls.Add(this.btnThongKe);
-            this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(634, 29);
-            this.panel3.TabIndex = 7;
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(906, 103);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(56, 13);
+            this.label45.TabIndex = 13;
+            this.label45.Text = "Date from:";
             // 
             // dtpkDateTo
             // 
-            this.dtpkDateTo.Location = new System.Drawing.Point(267, 3);
+            this.dtpkDateTo.Location = new System.Drawing.Point(906, 186);
             this.dtpkDateTo.Name = "dtpkDateTo";
             this.dtpkDateTo.Size = new System.Drawing.Size(200, 20);
             this.dtpkDateTo.TabIndex = 5;
             // 
-            // dtpkDatFrom
+            // dtpkDateFrom
             // 
-            this.dtpkDatFrom.Location = new System.Drawing.Point(32, 3);
-            this.dtpkDatFrom.Name = "dtpkDatFrom";
-            this.dtpkDatFrom.Size = new System.Drawing.Size(200, 20);
-            this.dtpkDatFrom.TabIndex = 4;
+            this.dtpkDateFrom.Location = new System.Drawing.Point(906, 122);
+            this.dtpkDateFrom.Name = "dtpkDateFrom";
+            this.dtpkDateFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpkDateFrom.TabIndex = 4;
             // 
-            // btnThongKe
+            // lb_Revenue_TotalRevenue
             // 
-            this.btnThongKe.Location = new System.Drawing.Point(499, 5);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(97, 19);
-            this.btnThongKe.TabIndex = 6;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.lb_Revenue_TotalRevenue.AutoSize = true;
+            this.lb_Revenue_TotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Revenue_TotalRevenue.Location = new System.Drawing.Point(299, 543);
+            this.lb_Revenue_TotalRevenue.Name = "lb_Revenue_TotalRevenue";
+            this.lb_Revenue_TotalRevenue.Size = new System.Drawing.Size(49, 20);
+            this.lb_Revenue_TotalRevenue.TabIndex = 12;
+            this.lb_Revenue_TotalRevenue.Text = "0.000";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(166, 543);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(109, 20);
+            this.label44.TabIndex = 11;
+            this.label44.Text = "Total revenue:";
+            // 
+            // btnStatictis
+            // 
+            this.btnStatictis.Location = new System.Drawing.Point(995, 286);
+            this.btnStatictis.Name = "btnStatictis";
+            this.btnStatictis.Size = new System.Drawing.Size(111, 35);
+            this.btnStatictis.TabIndex = 6;
+            this.btnStatictis.Text = "Statictis";
+            this.btnStatictis.UseVisualStyleBackColor = true;
+            this.btnStatictis.Click += new System.EventHandler(this.btnStatictis_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(907, 237);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(44, 13);
+            this.label43.TabIndex = 10;
+            this.label43.Text = "Branch:";
+            // 
+            // cbb_Rrevenue_Branch
+            // 
+            this.cbb_Statistic_Branch.FormattingEnabled = true;
+            this.cbb_Statistic_Branch.Location = new System.Drawing.Point(957, 234);
+            this.cbb_Statistic_Branch.Name = "cbb_Rrevenue_Branch";
+            this.cbb_Statistic_Branch.Size = new System.Drawing.Size(149, 21);
+            this.cbb_Statistic_Branch.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dtgv_Expenditure);
+            this.panel4.Controls.Add(this.dtgv_Revenue);
+            this.panel4.Controls.Add(this.label50);
+            this.panel4.Controls.Add(this.lb_Revenue_TotalExpenditure);
+            this.panel4.Controls.Add(this.label44);
+            this.panel4.Controls.Add(this.lb_Revenue_TotalRevenue);
+            this.panel4.Location = new System.Drawing.Point(0, 51);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(834, 584);
+            this.panel4.TabIndex = 8;
+            // 
+            // dtgv_Revenue
+            // 
+            this.dtgv_Revenue.BackgroundColor = System.Drawing.Color.White;
+            this.dtgv_Revenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Revenue.Location = new System.Drawing.Point(3, 3);
+            this.dtgv_Revenue.Name = "dtgv_Revenue";
+            this.dtgv_Revenue.Size = new System.Drawing.Size(411, 527);
+            this.dtgv_Revenue.TabIndex = 4;
             // 
             // tab
             // 
-            this.tab.Controls.Add(this.tpDoanhThu);
+            this.tab.Controls.Add(this.tpStatictis);
             this.tab.Controls.Add(this.tpDrink);
             this.tab.Controls.Add(this.tpBranch);
             this.tab.Controls.Add(this.tbAccount);
@@ -3412,6 +3485,75 @@ namespace QuanLiChuoiCF
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
             // 
+            // dtgv_Expenditure
+            // 
+            this.dtgv_Expenditure.BackgroundColor = System.Drawing.Color.White;
+            this.dtgv_Expenditure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Expenditure.Location = new System.Drawing.Point(416, 3);
+            this.dtgv_Expenditure.Name = "dtgv_Expenditure";
+            this.dtgv_Expenditure.Size = new System.Drawing.Size(411, 527);
+            this.dtgv_Expenditure.TabIndex = 4;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(154, 15);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(87, 24);
+            this.label47.TabIndex = 14;
+            this.label47.Text = "Revenue";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(575, 15);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(118, 24);
+            this.label48.TabIndex = 14;
+            this.label48.Text = "Expenditure ";
+            // 
+            // lb_Revenue_TotalExpenditure
+            // 
+            this.lb_Revenue_TotalExpenditure.AutoSize = true;
+            this.lb_Revenue_TotalExpenditure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Revenue_TotalExpenditure.Location = new System.Drawing.Point(760, 543);
+            this.lb_Revenue_TotalExpenditure.Name = "lb_Revenue_TotalExpenditure";
+            this.lb_Revenue_TotalExpenditure.Size = new System.Drawing.Size(49, 20);
+            this.lb_Revenue_TotalExpenditure.TabIndex = 12;
+            this.lb_Revenue_TotalExpenditure.Text = "0.000";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(627, 543);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(135, 20);
+            this.label50.TabIndex = 11;
+            this.label50.Text = "Total expenditure:";
+            // 
+            // lb_Revenue_TotalIncome
+            // 
+            this.lb_Revenue_TotalIncome.AutoSize = true;
+            this.lb_Revenue_TotalIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Revenue_TotalIncome.Location = new System.Drawing.Point(1039, 362);
+            this.lb_Revenue_TotalIncome.Name = "lb_Revenue_TotalIncome";
+            this.lb_Revenue_TotalIncome.Size = new System.Drawing.Size(49, 20);
+            this.lb_Revenue_TotalIncome.TabIndex = 12;
+            this.lb_Revenue_TotalIncome.Text = "0.000";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(906, 362);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(107, 20);
+            this.label51.TabIndex = 11;
+            this.label51.Text = "Total  income:";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3446,10 +3588,11 @@ namespace QuanLiChuoiCF
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel24.ResumeLayout(false);
-            this.tpDoanhThu.ResumeLayout(false);
+            this.tpStatictis.ResumeLayout(false);
+            this.tpStatictis.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Revenue)).EndInit();
             this.tab.ResumeLayout(false);
             this.tpDrink.ResumeLayout(false);
             this.tpDrink.PerformLayout();
@@ -3536,6 +3679,7 @@ namespace QuanLiChuoiCF
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiChuoiCFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Expenditure)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3563,13 +3707,12 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.Button btnUpdateBranch;
         private System.Windows.Forms.Button btnDeleteBranch;
         private System.Windows.Forms.Button btnAddBranch;
-        private System.Windows.Forms.TabPage tpDoanhThu;
+        private System.Windows.Forms.TabPage tpStatictis;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dtgv_Revenue;
         private System.Windows.Forms.DateTimePicker dtpkDateTo;
-        private System.Windows.Forms.DateTimePicker dtpkDatFrom;
-        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.DateTimePicker dtpkDateFrom;
+        private System.Windows.Forms.Button btnStatictis;
         private System.Windows.Forms.TabControl tab;
         private System.Windows.Forms.TabPage tpEmployee;
         private System.Windows.Forms.Panel panelEditEmployeeInfo;
@@ -3866,5 +4009,18 @@ namespace QuanLiChuoiCF
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Panel panel51;
         private System.Windows.Forms.Button btn_BillExport_Delete;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.ComboBox cbb_Statistic_Branch;
+        private System.Windows.Forms.Label lb_Revenue_TotalRevenue;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.DataGridView dtgv_Expenditure;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label lb_Revenue_TotalExpenditure;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label lb_Revenue_TotalIncome;
     }
 }

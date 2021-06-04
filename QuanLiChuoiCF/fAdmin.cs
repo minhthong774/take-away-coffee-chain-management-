@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace QuanLiChuoiCF
 {
@@ -61,6 +62,7 @@ namespace QuanLiChuoiCF
             LoadMaterial();
             LoadBill();
             LoadBillExport();
+            LoadStatistic();
 
             LoadSortAndSearchCombobox();
             LoadCbbAccountTypeInTabAccount();
@@ -201,6 +203,8 @@ namespace QuanLiChuoiCF
             cbb_BillExport_SearchBy.Items.Add("Branch");
             cbb_BillExport_SearchBy.Items.Add("Total Amount");
             cbb_BillExport_SearchBy.SelectedItem = cbb_BillExport_SearchBy.Items[0];
+
+             
         }
 
         private void LoadCbbAccountTypeInTabAccount()
@@ -267,6 +271,7 @@ namespace QuanLiChuoiCF
         #region LoadListToListView
         private void LoadDrinksToLsvDrink(List<Drink> drinks)
         {
+
             lsv_Drink.Items.Clear();
             foreach(Drink item in drinks)
             {
@@ -383,6 +388,7 @@ namespace QuanLiChuoiCF
                 lsv_BillExport.Items.Add(listViewItem);
             }
         }
+
         #endregion
 
         #region loadAndBinding
@@ -402,7 +408,18 @@ namespace QuanLiChuoiCF
             }
             LoadDrinksToLsvDrink(drinks);
         }
+        void LoadStatistic()
+        {
+            dtpkDateTo.Value = DateTime.Now;
+            TimeSpan t = new TimeSpan(30, 0, 0, 0);
+            dtpkDateFrom.Value = DateTime.Now - t;
+            foreach (Branch item in branches)
+            {
+                cbb_Statistic_Branch.Items.Add(item.Name.ToString());
+            }
+            cbb_Statistic_Branch.SelectedItem = cbb_Statistic_Branch.Items[0];
 
+        }
         void LoadBranches()
         {
             branches = BranchDAO.Instance.GetBranches();
@@ -2735,6 +2752,45 @@ namespace QuanLiChuoiCF
 
         private void cbb_Bill_SearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnStatictis_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select Drink.Name,DetailOfBill.Count, Drink.Price " +
+                " from bill,DetailOfBill,Drink  where DateCheckIn>='{0}' and DateCheckIn<='{1}' and " +
+                "( select Name from Branch where IDBranch= bill.IDBranch)='{2}' and Bill.IDBill=DetailOfBill.IDBill and DetailOfBill.IDDrink=Drink.IDDrink",
+             dtpkDateFrom.Value.ToString("yyyyMMdd"), dtpkDateTo.Value.ToString("yyyyMMdd"), cbb_Statistic_Branch.SelectedItem.ToString());
+
+            string query1 = string.Format("select InforOfMaterial.Name,count, Count *Price as Total from BillExport, DetailOfBillExport,Material, InforOfMaterial where BillExport.IDBranch='{0}' " +
+                "and BillExport.IDBillExport=DetailOfBillExport.IDBillExport and Date >= '{1}' and Date <= '{2}' and " +
+                "DetailOfBillExport.IDMaterial = Material.IDMaterial and Material.IDInfoOfMaterial = InforOfMaterial.IDInfoOfMaterial",
+                  cbb_Statistic_Branch.SelectedItem.ToString(),dtpkDateFrom.Value.ToString("yyyyMMdd"), dtpkDateTo.Value.ToString("yyyyMMdd"));
+
+            float total_Re = 0;
+            float total_Ex = 0;
+
+            dtgv_Expenditure.Refresh();
+            dtgv_Revenue.Refresh();
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            dtgv_Revenue.DataSource = data;
+
+            DataTable data1 = DataProvider.Instance.ExecuteQuery(query1);
+            dtgv_Expenditure.DataSource = data1;
+
+            foreach (DataRow row in data.Rows)
+            {
+                total_Re+= float.Parse(row[2].ToString());
+
+            }
+            foreach (DataRow row in data1.Rows)
+            {
+                total_Ex+= float.Parse(row[2].ToString());
+
+            }
+            lb_Revenue_TotalRevenue.Text =total_Re.ToString("n1", CultureInfo.InvariantCulture);//để có định dạng kiểu 9,999,999.0
+            lb_Revenue_TotalExpenditure.Text =total_Ex.ToString("n1", CultureInfo.InvariantCulture);//để có định dạng kiểu 9,999,999.0
+            lb_Revenue_TotalIncome.Text =(total_Re-total_Ex).ToString("n1", CultureInfo.InvariantCulture);//để có định dạng kiểu 9,999,999.0
 
         }
     }

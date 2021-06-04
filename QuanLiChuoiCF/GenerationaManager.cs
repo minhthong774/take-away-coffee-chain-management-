@@ -176,12 +176,19 @@ namespace QuanLiChuoiCF
 
         private void lsvSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lsvBill.SelectedItems.Count > 0)
+            try
             {
-                var item = lsvBill.SelectedItems[0];
-                cbb_addDrink.SelectedItem = item.SubItems[0].Text;
-                numericUpDown1.Value = int.Parse(item.SubItems[1].Text);
+                if (lsvBill.SelectedItems.Count > 0)
+                {
+                    var item = lsvBill.SelectedItems[0];
+                    cbb_addDrink.SelectedItem = item.SubItems[0].Text;
+                    numericUpDown1.Value = int.Parse(item.SubItems[1].Text);
+                }
+            } catch(Exception)
+            {
+                MessageBox.Show("Have no item to show");
             }
+           
         }
 
         private void numericUpDown1Click(object sender, EventArgs e)
@@ -213,15 +220,27 @@ namespace QuanLiChuoiCF
             if (BillDAO.Instance.AddBill(lastIDBill,branch ,DateTime.Now))
             {
                 int count = 0;
+                int dem = 0;
+                
                 foreach(ListViewItem item in lsvBill.Items)
                 {
                     Drink drink = DrinkDAO.Instance.GetDrink(item.SubItems[0].Text.Split('-')[0]);
                     count = Int16.Parse(item.SubItems[1].Text.ToString());
-                    DetailOfBillDAO.Instance.AddDetailOfBill(lastIDBill, drink.ID, count);                 
+                    DetailOfBillDAO.Instance.AddDetailOfBill(lastIDBill, drink.ID, count);
+                    dem++;
                 }
-                Payment p = new Payment();
-                p.ShowDialog();
-                p.Close();
+                if (dem > 0)
+                {
+                    Payment p = new Payment();
+                    p.ShowDialog();
+                    p.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Have no drink to get bill.");
+                
+                }
+                             
             }
             //Reset list view bill
             lsvBill.Items.Clear();   
