@@ -2762,7 +2762,8 @@ namespace QuanLiChuoiCF
                 "( select Name from Branch where IDBranch= bill.IDBranch)='{2}' and Bill.IDBill=DetailOfBill.IDBill and DetailOfBill.IDDrink=Drink.IDDrink",
              dtpkDateFrom.Value.ToString("yyyyMMdd"), dtpkDateTo.Value.ToString("yyyyMMdd"), cbb_Statistic_Branch.SelectedItem.ToString());
 
-            string query1 = string.Format("select InforOfMaterial.Name,count, Count *Price as Total from BillExport, DetailOfBillExport,Material, InforOfMaterial where BillExport.IDBranch='{0}' " +
+            string query1 = string.Format("select InforOfMaterial.Name,DetailOfBillExport.IDBillExport,count, Count *Price as Total from BillExport, DetailOfBillExport,Material, InforOfMaterial " +
+                "where (select name from Branch where Branch.IDBranch=  BillExport.IDBranch)='{0}' " +
                 "and BillExport.IDBillExport=DetailOfBillExport.IDBillExport and Date >= '{1}' and Date <= '{2}' and " +
                 "DetailOfBillExport.IDMaterial = Material.IDMaterial and Material.IDInfoOfMaterial = InforOfMaterial.IDInfoOfMaterial",
                   cbb_Statistic_Branch.SelectedItem.ToString(),dtpkDateFrom.Value.ToString("yyyyMMdd"), dtpkDateTo.Value.ToString("yyyyMMdd"));
@@ -2785,7 +2786,7 @@ namespace QuanLiChuoiCF
             }
             foreach (DataRow row in data1.Rows)
             {
-                total_Ex+= float.Parse(row[2].ToString());
+                total_Ex+= float.Parse(row[3].ToString());
 
             }
             lb_Revenue_TotalRevenue.Text =total_Re.ToString("n1", CultureInfo.InvariantCulture);//để có định dạng kiểu 9,999,999.0
