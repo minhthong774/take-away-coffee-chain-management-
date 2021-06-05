@@ -9,8 +9,8 @@ namespace QuanLiChuoiCF.DAO
 {
     class DrinkDAO
     {
-        public static int TableWidth =100;
-        public static int TableHeight =100;
+        public static int TableWidth =170;
+        public static int TableHeight =160;
 
         private static DrinkDAO instance;
         public static DrinkDAO Instance

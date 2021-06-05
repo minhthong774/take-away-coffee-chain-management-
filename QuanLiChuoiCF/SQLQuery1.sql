@@ -38,3 +38,11 @@
 	begin
 	SELECT * FROM Employee WHERE IDEmployee IN (SELECT Account.IDEmployee FROM Employee,Account WHERE Account.Username=@userName)
 	end;
+
+	select Drink.Name,DetailOfBill.Count, Drink.Price from bill,DetailOfBill,Drink where DateCheckIn>='20210101' and DateCheckIn<='20210701' 
+	and ( select Name from Branch where IDBranch= bill.IDBranch)='Branch London' and Bill.IDBill=DetailOfBill.IDBill and DetailOfBill.IDDrink=Drink.IDDrink
+
+	select InforOfMaterial.Name, Count *Price as total from BillExport, DetailOfBillExport,Material, InforOfMaterial where BillExport.IDBranch='BR04' and BillExport.IDBillExport=DetailOfBillExport.IDBillExport
+	 and Date>='20210101' and Date<='20210701' and DetailOfBillExport.IDMaterial=Material.IDMaterial and Material.IDInfoOfMaterial= InforOfMaterial.IDInfoOfMaterial
+
+	
