@@ -365,8 +365,20 @@ namespace QuanLiChuoiCF
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(CanResetPsWd() && txbNewPassword!=null)
+            if(txbNewPassword.Text==txbConfirmNewPassword.Text)
             {
+                string password = txbNewPassword.Text;
+                if (password == "")
+                {
+                    MessageBox.Show("Password is empty");
+                    return;
+                }
+                string newPassword = txbNewPassword.Text;
+                if (!Regex.IsMatch(newPassword, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$"))
+                {
+                    MessageBox.Show("Password is not in correct format");
+                    return;
+                }
                 AccountDAO.Instance.ChangePassword(fLogin.userName, txbNewPassword.Text);
                 MessageBox.Show(this, "Uppdate Password Successfully!!", "Change Password", MessageBoxButtons.OK);
                 LoadEmployeeIntoForm();
@@ -382,5 +394,7 @@ namespace QuanLiChuoiCF
         {
 
         }
+
+
     }
 }
