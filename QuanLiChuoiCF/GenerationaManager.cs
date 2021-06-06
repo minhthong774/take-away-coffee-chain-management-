@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QuanLiChuoiCF
@@ -336,7 +337,23 @@ namespace QuanLiChuoiCF
         {
            if(txbNewPassword.Text==txbConfirmNewPassword.Text)
             {
-                return true;
+                string password = txbPassword.Text;
+                if (password == "")
+                {
+                    MessageBox.Show("NOTIFY: Password is empty");
+                    return false;
+                }
+                if (password != fLogin.passWord)
+                { 
+                    MessageBox.Show("NOTIFY: Wrong password");
+                    return false;
+                }
+                string newPassword = txbNewPassword.Text;
+                if (!Regex.IsMatch(newPassword, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$"))
+                {
+                    MessageBox.Show("NOTIFY: Password is not in correct format");
+                    return false;
+                }
             }
             return false;
         }
@@ -359,6 +376,11 @@ namespace QuanLiChuoiCF
                 MessageBox.Show(this, "Your Confirm Password Is Not Correct!!", "Change Password", MessageBoxButtons.OK);
                 txbConfirmNewPassword.Focus();
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

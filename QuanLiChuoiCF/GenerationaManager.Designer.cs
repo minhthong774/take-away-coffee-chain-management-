@@ -64,9 +64,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tp_AccountProfile = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.txbConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.txbNewPassword = new System.Windows.Forms.TextBox();
             this.txbPassword = new System.Windows.Forms.TextBox();
@@ -77,6 +74,11 @@
             this.labelNewPassword = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tc_Employee.SuspendLayout();
             this.tp_PaymentManager.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -90,6 +92,7 @@
             this.tp_AccountProfile.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tc_Employee
@@ -486,7 +489,6 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.5834F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.4166F));
-            this.tableLayoutPanel1.Controls.Add(this.panel9, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.txbConfirmNewPassword, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txbNewPassword, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txbPassword, 1, 2);
@@ -497,62 +499,27 @@
             this.tableLayoutPanel1.Controls.Add(this.labelNewPassword, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.labelPassword, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelUserName, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel9, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1278, 639);
             this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btnUpdate);
-            this.panel9.Controls.Add(this.btnThoat);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(202, 533);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1073, 70);
-            this.panel9.TabIndex = 9;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Teal;
-            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.Wheat;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 0);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(172, 70);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Teal;
-            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.Wheat;
-            this.btnThoat.Location = new System.Drawing.Point(910, 0);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(163, 70);
-            this.btnThoat.TabIndex = 5;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // txbConfirmNewPassword
             // 
             this.txbConfirmNewPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txbConfirmNewPassword.Location = new System.Drawing.Point(202, 467);
+            this.txbConfirmNewPassword.Location = new System.Drawing.Point(202, 399);
             this.txbConfirmNewPassword.Name = "txbConfirmNewPassword";
             this.txbConfirmNewPassword.Size = new System.Drawing.Size(364, 20);
             this.txbConfirmNewPassword.TabIndex = 3;
@@ -561,7 +528,7 @@
             // txbNewPassword
             // 
             this.txbNewPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txbNewPassword.Location = new System.Drawing.Point(202, 361);
+            this.txbNewPassword.Location = new System.Drawing.Point(202, 308);
             this.txbNewPassword.Name = "txbNewPassword";
             this.txbNewPassword.Size = new System.Drawing.Size(364, 20);
             this.txbNewPassword.TabIndex = 2;
@@ -570,7 +537,7 @@
             // txbPassword
             // 
             this.txbPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txbPassword.Location = new System.Drawing.Point(202, 255);
+            this.txbPassword.Location = new System.Drawing.Point(202, 217);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(364, 20);
             this.txbPassword.TabIndex = 1;
@@ -579,7 +546,7 @@
             // txbIDOfEmployee
             // 
             this.txbIDOfEmployee.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txbIDOfEmployee.Location = new System.Drawing.Point(202, 149);
+            this.txbIDOfEmployee.Location = new System.Drawing.Point(202, 126);
             this.txbIDOfEmployee.Name = "txbIDOfEmployee";
             this.txbIDOfEmployee.ReadOnly = true;
             this.txbIDOfEmployee.Size = new System.Drawing.Size(364, 20);
@@ -588,7 +555,7 @@
             // txbUsername
             // 
             this.txbUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txbUsername.Location = new System.Drawing.Point(202, 43);
+            this.txbUsername.Location = new System.Drawing.Point(202, 35);
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.ReadOnly = true;
             this.txbUsername.Size = new System.Drawing.Size(364, 20);
@@ -599,7 +566,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(119, 45);
+            this.label2.Location = new System.Drawing.Point(119, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 0;
@@ -611,7 +578,7 @@
             this.labelConfirmNewPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelConfirmNewPassword.AutoSize = true;
             this.labelConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelConfirmNewPassword.Location = new System.Drawing.Point(37, 469);
+            this.labelConfirmNewPassword.Location = new System.Drawing.Point(37, 402);
             this.labelConfirmNewPassword.Name = "labelConfirmNewPassword";
             this.labelConfirmNewPassword.Size = new System.Drawing.Size(159, 15);
             this.labelConfirmNewPassword.TabIndex = 0;
@@ -622,7 +589,7 @@
             this.labelNewPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelNewPassword.AutoSize = true;
             this.labelNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNewPassword.Location = new System.Drawing.Point(99, 363);
+            this.labelNewPassword.Location = new System.Drawing.Point(99, 311);
             this.labelNewPassword.Name = "labelNewPassword";
             this.labelNewPassword.Size = new System.Drawing.Size(97, 15);
             this.labelNewPassword.TabIndex = 0;
@@ -633,7 +600,7 @@
             this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(123, 257);
+            this.labelPassword.Location = new System.Drawing.Point(123, 220);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(73, 15);
             this.labelPassword.TabIndex = 0;
@@ -644,11 +611,67 @@
             this.labelUserName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(88, 151);
+            this.labelUserName.Location = new System.Drawing.Point(88, 129);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(108, 15);
             this.labelUserName.TabIndex = 0;
             this.labelUserName.Text = "ID of Employee:";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.btnUpdate);
+            this.panel9.Controls.Add(this.btnThoat);
+            this.panel9.Location = new System.Drawing.Point(202, 549);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1073, 85);
+            this.panel9.TabIndex = 10;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Wheat;
+            this.btnUpdate.Location = new System.Drawing.Point(0, 0);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(172, 85);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Teal;
+            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Wheat;
+            this.btnThoat.Location = new System.Drawing.Point(910, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(163, 85);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Location = new System.Drawing.Point(202, 458);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1073, 85);
+            this.panel10.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AllowDrop = true;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Teal;
+            this.label3.Location = new System.Drawing.Point(12, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(261, 52);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "NOTICE: Minimum eight and maximum 10 characters, \r\nat least one uppercase letter," +
+    " \r\none lowercase letter, \r\none number and one special character [@$!%*?&]";
             // 
             // fTableManager
             // 
@@ -681,6 +704,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -723,9 +748,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TabPage tp_AccountProfile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txbConfirmNewPassword;
         private System.Windows.Forms.TextBox txbNewPassword;
         private System.Windows.Forms.TextBox txbPassword;
@@ -736,5 +758,10 @@
         private System.Windows.Forms.Label labelNewPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelUserName;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label3;
     }
 }
